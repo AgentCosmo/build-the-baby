@@ -31,7 +31,7 @@ export const categories: Category[] = [
         description:
           'Award-winning responsive bassinet that automatically soothes your baby back to sleep with gentle rocking and white noise.',
         priceRange: '$1,295–$1,695',
-        affiliateUrl: 'https://www.amazon.com/dp/B01N5OJ7QK?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B089LNVKGJ?tag=buildthebaby-20',
         rating: 4.8,
         tag: 'Editor\'s Pick',
       },
@@ -41,7 +41,7 @@ export const categories: Category[] = [
         description:
           'Swivels 360° for easy access from bed. Includes soothing sounds, vibration, and a night light.',
         priceRange: '$179–$249',
-        affiliateUrl: 'https://www.amazon.com/dp/B00M3NHQAY?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00TNU4L0G?tag=buildthebaby-20',
         rating: 4.6,
       },
       {
@@ -50,7 +50,7 @@ export const categories: Category[] = [
         description:
           '100% breathable, washable crib mattress with Wovenaire core. GREENGUARD Gold certified.',
         priceRange: '$199–$329',
-        affiliateUrl: 'https://www.amazon.com/dp/B07CZPGXK1?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01FUURF5W?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Best for Safety',
       },
@@ -87,7 +87,7 @@ export const categories: Category[] = [
         description:
           'Hospital-strength double electric pump with customizable settings and quiet motor.',
         priceRange: '$149–$199',
-        affiliateUrl: 'https://www.amazon.com/dp/B00MTCUK2S?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00MJ4LNE6?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Top Rated',
       },
@@ -107,7 +107,7 @@ export const categories: Category[] = [
         description:
           'Clinically proven to reduce colic, gas, and spit-up. Internal vent system mimics breastfeeding.',
         priceRange: '$22–$35',
-        affiliateUrl: 'https://www.amazon.com/dp/B000058GOR?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01MRZNNMK?tag=buildthebaby-20',
         rating: 4.6,
       },
       {
@@ -116,7 +116,7 @@ export const categories: Category[] = [
         description:
           'Iconic C-shaped nursing and infant support pillow. Versatile enough for tummy time too.',
         priceRange: '$40–$55',
-        affiliateUrl: 'https://www.amazon.com/dp/B000F72O2S?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B001N3O5CM?tag=buildthebaby-20',
         rating: 4.7,
       },
       {
@@ -134,7 +134,7 @@ export const categories: Category[] = [
         description:
           'Brain-building formula with MFGM & DHA. Closest to breast milk available. Gentle on tiny tummies.',
         priceRange: '$39–$49',
-        affiliateUrl: 'https://www.amazon.com/dp/B07H8RRLQ4?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07CKDBBQP?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Top Formula',
       },
@@ -144,7 +144,7 @@ export const categories: Category[] = [
         description:
           'USDA organic single-ingredient fruit & veggie purees. BPA-free pouches, no added salt or sugar.',
         priceRange: '$18–$24',
-        affiliateUrl: 'https://www.amazon.com/dp/B00GVIW5GM?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01BKXS9XY?tag=buildthebaby-20',
         rating: 4.6,
       },
     ],
@@ -172,7 +172,7 @@ export const categories: Category[] = [
         description:
           'Converts from newborn to toddler. Includes removable newborn insert and non-slip base.',
         priceRange: '$39–$49',
-        affiliateUrl: 'https://www.amazon.com/dp/B08LCH9ZFD?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B08Q3BBQBH?tag=buildthebaby-20',
         rating: 4.6,
       },
       {
@@ -181,7 +181,7 @@ export const categories: Category[] = [
         description:
           'Tear-free, hypoallergenic formula with natural oat extract. Gentle enough for daily use.',
         priceRange: '$9–$14',
-        affiliateUrl: 'https://www.amazon.com/dp/B0015ARQZ6?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B000GZX08A?tag=buildthebaby-20',
         rating: 4.8,
       },
       {
@@ -190,7 +190,7 @@ export const categories: Category[] = [
         description:
           'Floating duck thermometer with digital readout. Alerts when water is too hot (>104°F).',
         priceRange: '$9–$14',
-        affiliateUrl: 'https://www.amazon.com/dp/B00EMIDZ7Y?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00GQPDZWU?tag=buildthebaby-20',
         rating: 4.5,
       },
     ],
@@ -208,7 +208,7 @@ export const categories: Category[] = [
         description:
           'Premium full-size stroller that grows with your family. Converts to double stroller for a second child.',
         priceRange: '$899–$999',
-        affiliateUrl: 'https://www.amazon.com/dp/B083Q31W3J?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B083QGFZV3?tag=buildthebaby-20',
         rating: 4.8,
         tag: 'Best Overall',
       },
@@ -218,7 +218,7 @@ export const categories: Category[] = [
         description:
           'Easy-to-install infant seat with SuperCinch LATCH tightener and bubble level indicator.',
         priceRange: '$229–$279',
-        affiliateUrl: 'https://www.amazon.com/dp/B07V8JHZQF?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07T8GZDL2?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Safety Certified',
       },
@@ -228,7 +228,7 @@ export const categories: Category[] = [
         description:
           'All-position carrier suitable from newborn (7 lbs) through toddler (45 lbs). Lumbar support included.',
         priceRange: '$160–$180',
-        affiliateUrl: 'https://www.amazon.com/dp/B07BQHQT37?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07BQHBQHJ?tag=buildthebaby-20',
         rating: 4.7,
       },
       {
@@ -255,7 +255,7 @@ export const categories: Category[] = [
         description:
           'Converts from crib → toddler bed → daybed → full-size bed. JPMA certified, solid pine construction.',
         priceRange: '$219–$279',
-        affiliateUrl: 'https://www.amazon.com/dp/B07H8BRDK5?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07CYLVH2B?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Best Value',
       },
@@ -293,7 +293,7 @@ export const categories: Category[] = [
         description:
           'HD wall-mounted monitor with sleep tracking, breathing motion band, and two-way audio.',
         priceRange: '$299–$349',
-        affiliateUrl: 'https://www.amazon.com/dp/B07W82JMQ7?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07PMQBJQP?tag=buildthebaby-20',
         rating: 4.6,
       },
     ],
@@ -311,7 +311,7 @@ export const categories: Category[] = [
         description:
           '100% organic cotton snap-front footies. No struggling with zippers in the middle of the night.',
         priceRange: '$35–$45',
-        affiliateUrl: 'https://www.amazon.com/dp/B071W7CW1Q?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01H7KMMOQ?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Best Seller',
       },
@@ -330,7 +330,7 @@ export const categories: Category[] = [
         description:
           'Soft 100% cotton lap-shoulder bodysuits. Easy diaper changes with triple snap closure.',
         priceRange: '$22–$30',
-        affiliateUrl: 'https://www.amazon.com/dp/B00APBWQXI?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07QXKD5MG?tag=buildthebaby-20',
         rating: 4.7,
       },
       {
@@ -348,7 +348,7 @@ export const categories: Category[] = [
         description:
           'Warm full-zip fleece bunting bag with fold-over mittens and booties. Perfect for stroller rides in cool weather.',
         priceRange: '$35–$50',
-        affiliateUrl: 'https://www.amazon.com/dp/B07BQK2GLS?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07BDNR9MB?tag=buildthebaby-20',
         rating: 4.6,
         tag: 'Cold Weather Pick',
       },
@@ -367,7 +367,7 @@ export const categories: Category[] = [
         description:
           'The #1 choice of US hospitals. Wetness indicator changes color when wet, and umbilical cord notch for newborns.',
         priceRange: '$32–$42',
-        affiliateUrl: 'https://www.amazon.com/dp/B07MFK7MH9?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07KKVNNN2?tag=buildthebaby-20',
         rating: 4.8,
         tag: 'Best Seller',
       },
@@ -377,7 +377,7 @@ export const categories: Category[] = [
         description:
           '99.9% purified water and a drop of fruit extract. The purest baby wipes for sensitive newborn skin.',
         priceRange: '$28–$36',
-        affiliateUrl: 'https://www.amazon.com/dp/B01HXNM8MU?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00PJ5ASKE?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Sensitive Skin',
       },
@@ -387,7 +387,7 @@ export const categories: Category[] = [
         description:
           'Powder-coated steel pail with sliding lid lock that seals in odors. Uses any tall kitchen bag — no proprietary refills.',
         priceRange: '$79–$99',
-        affiliateUrl: 'https://www.amazon.com/dp/B005L6JBBO?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00AJ7XVVY?tag=buildthebaby-20',
         rating: 4.6,
         tag: 'Editor\'s Pick',
       },
@@ -397,7 +397,7 @@ export const categories: Category[] = [
         description:
           'Contoured foam changing pad with safety strap and waterproof cover. Non-slip bottom keeps it secure on any dresser.',
         priceRange: '$22–$32',
-        affiliateUrl: 'https://www.amazon.com/dp/B000F6DV8O?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B000BQYTFE?tag=buildthebaby-20',
         rating: 4.7,
       },
       {
@@ -406,7 +406,7 @@ export const categories: Category[] = [
         description:
           '40% zinc oxide formula provides instant relief and protects against diaper rash. Pediatrician recommended.',
         priceRange: '$8–$13',
-        affiliateUrl: 'https://www.amazon.com/dp/B000052XNI?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00MLYBZ8A?tag=buildthebaby-20',
         rating: 4.8,
       },
     ],
@@ -424,7 +424,7 @@ export const categories: Category[] = [
         description:
           'One-piece hospital-grade silicone pacifier used in newborn nurseries nationwide. BPA-free, dishwasher safe.',
         priceRange: '$9–$14',
-        affiliateUrl: 'https://www.amazon.com/dp/B000WOOS5Q?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01EQKDM9Q?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Hospital Approved',
       },
@@ -444,7 +444,7 @@ export const categories: Category[] = [
         description:
           'Mimics the natural motions parents use — car ride, kangaroo, ocean, and more. Bluetooth controlled via app.',
         priceRange: '$229–$279',
-        affiliateUrl: 'https://www.amazon.com/dp/B07SLKLJ2V?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01LXVTPBW?tag=buildthebaby-20',
         rating: 4.5,
         tag: 'Splurge Pick',
       },
@@ -454,7 +454,7 @@ export const categories: Category[] = [
         description:
           'Soft foam activity mat with 5 detachable toys, a tummy time pillow, and mirror. Folds for easy storage.',
         priceRange: '$69–$89',
-        affiliateUrl: 'https://www.amazon.com/dp/B074BQV6YY?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B00GNH3BTI?tag=buildthebaby-20',
         rating: 4.7,
       },
     ],
