@@ -31,7 +31,7 @@ export const categories: Category[] = [
         description:
           'Award-winning responsive bassinet that automatically soothes your baby back to sleep with gentle rocking and white noise.',
         priceRange: '$1,295–$1,695',
-        affiliateUrl: 'https://www.amazon.com/dp/B089LNVKGJ?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B0716KN18Z?tag=buildthebaby-20',
         rating: 4.8,
         tag: 'Editor\'s Pick',
       },
@@ -97,7 +97,7 @@ export const categories: Category[] = [
         description:
           'Simple silicone pump that works via suction — perfect for catching letdown on the other side.',
         priceRange: '$13–$18',
-        affiliateUrl: 'https://www.amazon.com/dp/B076BTNKX6?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B07CWK4S5W?tag=buildthebaby-20',
         rating: 4.6,
         tag: 'Budget Pick',
       },
@@ -228,7 +228,7 @@ export const categories: Category[] = [
         description:
           'All-position carrier suitable from newborn (7 lbs) through toddler (45 lbs). Lumbar support included.',
         priceRange: '$160–$180',
-        affiliateUrl: 'https://www.amazon.com/dp/B07BQHBQHJ?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B0C4KYV1M2?tag=buildthebaby-20',
         rating: 4.7,
       },
       {
@@ -311,7 +311,7 @@ export const categories: Category[] = [
         description:
           '100% organic cotton snap-front footies. No struggling with zippers in the middle of the night.',
         priceRange: '$35–$45',
-        affiliateUrl: 'https://www.amazon.com/dp/B01H7KMMOQ?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01N2CYX8Z?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Best Seller',
       },
@@ -348,7 +348,7 @@ export const categories: Category[] = [
         description:
           'Warm full-zip fleece bunting bag with fold-over mittens and booties. Perfect for stroller rides in cool weather.',
         priceRange: '$35–$50',
-        affiliateUrl: 'https://www.amazon.com/dp/B07BDNR9MB?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B01N5VY3AC?tag=buildthebaby-20',
         rating: 4.6,
         tag: 'Cold Weather Pick',
       },
@@ -406,7 +406,7 @@ export const categories: Category[] = [
         description:
           '40% zinc oxide formula provides instant relief and protects against diaper rash. Pediatrician recommended.',
         priceRange: '$8–$13',
-        affiliateUrl: 'https://www.amazon.com/dp/B00MLYBZ8A?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B0006KZWVS?tag=buildthebaby-20',
         rating: 4.8,
       },
     ],
@@ -424,7 +424,7 @@ export const categories: Category[] = [
         description:
           'One-piece hospital-grade silicone pacifier used in newborn nurseries nationwide. BPA-free, dishwasher safe.',
         priceRange: '$9–$14',
-        affiliateUrl: 'https://www.amazon.com/dp/B01EQKDM9Q?tag=buildthebaby-20',
+        affiliateUrl: 'https://www.amazon.com/dp/B003LYMVUW?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Hospital Approved',
       },
