@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { categoryNavItems } from '@/lib/data'
 
 export default function Nav() {
@@ -8,10 +9,7 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <span className="text-2xl">🍼</span>
-            <span className="font-bold text-xl text-stone-800 tracking-tight">
-              Build The Baby
-            </span>
+            <Image src="/logo.png" alt="BuildTheBaby logo" width={40} height={60} className="object-contain" />
           </Link>
 
           {/* Category nav — hidden on mobile */}
