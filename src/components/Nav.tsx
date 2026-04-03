@@ -10,7 +10,7 @@ export default function Nav() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <Image src="/logo.png" alt="BuildTheBaby logo" width={120} height={180} className="object-contain h-12 w-auto" />
+            <Image src="/logo.png" alt="BuildTheBaby logo" width={160} height={143} className="object-contain h-16 w-auto" />
           </Link>
 
           {/* Category nav — hidden on mobile */}
