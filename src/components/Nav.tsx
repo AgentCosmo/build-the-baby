@@ -25,18 +25,31 @@ export default function Nav() {
                 <span>{name}</span>
               </Link>
             ))}
+            <Link
+              href="/guides"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 transition-colors whitespace-nowrap ml-1"
+            >
+              <span>📖</span>
+              <span>Guides</span>
+            </Link>
           </nav>
 
-          {/* Registry link */}
-          <RegistryNavBadge />
-
-          {/* Mobile: categories label */}
-          <Link
-            href="/#categories"
-            className="md:hidden text-sm font-medium text-amber-700 border border-amber-300 rounded-full px-3 py-1.5 hover:bg-amber-50 transition-colors"
-          >
-            Categories
-          </Link>
+          {/* Right side: registry badge + mobile nav */}
+          <div className="flex items-center gap-1.5">
+            <RegistryNavBadge />
+            <Link
+              href="/guides"
+              className="md:hidden text-sm font-medium text-stone-500 hover:text-amber-700 transition-colors px-2 py-1.5"
+            >
+              Guides
+            </Link>
+            <Link
+              href="/#categories"
+              className="md:hidden text-sm font-medium text-amber-700 border border-amber-300 rounded-full px-3 py-1.5 hover:bg-amber-50 transition-colors"
+            >
+              Categories
+            </Link>
+          </div>
         </div>
       </div>
     </header>
