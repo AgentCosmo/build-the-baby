@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
@@ -33,6 +34,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full`}>
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-N194TQ8BHS" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-N194TQ8BHS');
+        `}</Script>
+      </head>
       <body className="min-h-full flex flex-col antialiased bg-[#fdfaf6] text-stone-900">
         <RegistryProvider>
         <Nav />
