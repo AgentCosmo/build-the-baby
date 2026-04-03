@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Build The Baby — Your Complete Baby Registry Planner',
   description:
-    'A PC Part Picker-style planner for new parents. Build your perfect baby registry by category with expert-curated picks and affiliate links.',
+    'The one-stop planner for new parents. Build your perfect baby registry by category with expert-curated picks and affiliate links.',
   openGraph: {
     title: 'Build The Baby',
     description: 'Build your complete baby registry, category by category.',
