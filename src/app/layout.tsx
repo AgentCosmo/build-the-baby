@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     description: 'Build your complete baby registry, category by category.',
     siteName: 'Build The Baby',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Build The Baby — Your Complete Baby Registry Planner',
+    description: 'The one-stop planner for new parents. Build your perfect baby registry by category.',
+  },
 }
 
 export default function RootLayout({

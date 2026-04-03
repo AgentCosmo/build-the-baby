@@ -241,6 +241,38 @@ export default async function GuidePage({ params }: Props) {
           </section>
         </article>
 
+        {/* Related Guides */}
+        {(() => {
+          const relatedGuides = guides.filter((g) => g.slug !== slug).slice(0, 3)
+          return relatedGuides.length > 0 ? (
+            <div className="mt-16">
+              <h2 className="text-xl font-bold text-stone-800 mb-6">More Guides</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {relatedGuides.map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={`/guides/${g.slug}`}
+                    className="group bg-white border border-stone-100 rounded-2xl shadow-sm p-5 hover:border-amber-200 hover:shadow-md transition-all flex flex-col gap-3"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-100 flex items-center justify-center text-2xl shrink-0">
+                      {g.emoji}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-stone-800 text-sm leading-snug mb-1 group-hover:text-amber-700 transition-colors">
+                        {g.title}
+                      </h3>
+                      <p className="text-xs text-stone-400 leading-relaxed line-clamp-2">{g.intro}</p>
+                    </div>
+                    <span className="text-xs font-semibold text-amber-600 group-hover:text-amber-700 transition-colors">
+                      Read Guide →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null
+        })()}
+
         {/* Registry CTA */}
         <div className="mt-16 bg-gradient-to-br from-amber-50 to-rose-50 rounded-2xl border border-amber-200 p-8 text-center">
           <p className="text-xl font-bold text-stone-800 mb-2">Ready to build your registry?</p>
