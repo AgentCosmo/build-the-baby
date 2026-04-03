@@ -953,6 +953,609 @@ export const guides: Guide[] = [
       },
     ],
   },
+  // ─── Guide 6: Best Strollers for Newborns 2026 ───────────────────────────────
+  {
+    slug: 'best-strollers-newborns-2026',
+    title: 'Best Strollers for Newborns 2026',
+    metaTitle: 'Best Strollers for Newborns 2026 — Build The Baby',
+    metaDescription:
+      'Finding the right newborn stroller is overwhelming. Here are the best strollers for newborns in 2026 — lightweight, full-recline, and tested by real parents.',
+    emoji: '🍼',
+    readTime: 10,
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    intro:
+      "Choosing a stroller for a newborn isn't as simple as picking the prettiest one at the store. Newborns need to lie flat (or nearly flat) to protect their airway and spine, which means not every stroller on the market is actually appropriate from birth. We cut through the marketing noise to find the best strollers that are genuinely newborn-safe, parent-approved, and worth the money.",
+    sections: [
+      {
+        heading: 'What Makes a Stroller Newborn-Safe?',
+        body: "Newborns lack the neck and core strength to hold their heads up. That means the stroller seat must recline to fully flat — or you need to use an infant car seat adapter that keeps your baby in the angle they need. Look for:\n\nFull flat recline. A true 180-degree recline lets your newborn lie as they would in a crib. If a stroller only reclines to 120–140 degrees, it's not safe for a baby under 3–4 months without a car seat.\n\nNewborn-compatible footrest and seat insert. A padded newborn insert keeps your baby snug in a seat designed for a larger child.\n\nSmooth suspension. Newborn necks don't need jarring vibrations. Look for all-wheel suspension, especially if you'll be using it on sidewalks or outdoor paths.\n\nCar seat compatibility. Most modern strollers can be converted into a travel system using an adapter for popular infant car seats like the Chicco KeyFit or Graco SnugRide — this is often the safest way to transport a newborn in a stroller.",
+      },
+      {
+        heading: 'Our Top Picks',
+        body: 'Five strollers across different budgets and use cases — from the lightweight everyday option to the premium travel system.',
+        products: [
+          {
+            name: 'Graco Modes Pramette Travel System',
+            asin: 'B07RTBDF2V',
+            price: '$349',
+            rating: 4.6,
+            badge: 'Best Travel System',
+            description:
+              "Includes an infant car seat and a stroller that accepts it in both forward and parent-facing positions. The pramette mode turns the seat into a lie-flat bassinet from birth. A complete newborn travel solution in one box.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07RTBDF2V?tag=buildthebaby-20',
+            pros: [
+              'Pramette lie-flat mode from birth',
+              'Car seat included',
+              'Parent-facing and forward-facing',
+              'Large storage basket',
+              'One-hand fold',
+            ],
+            con: 'Heavier than standalone strollers',
+          },
+          {
+            name: 'UPPAbaby MINU V2 Stroller',
+            asin: 'B09B25RGKV',
+            price: '$499',
+            rating: 4.7,
+            badge: "Editor's Pick",
+            description:
+              "Ultra-compact and lightweight at 14.9 lbs, but built with UPPAbaby's signature quality. Accepts the UPPAbaby MESA infant car seat. Full recline with a lie-flat mode makes it newborn-safe from day one. Self-standing fold is a game-changer.",
+            affiliateUrl: 'https://www.amazon.com/dp/B09B25RGKV?tag=buildthebaby-20',
+            pros: [
+              '14.9 lbs — ultra lightweight',
+              'Full lie-flat recline',
+              'Self-standing compact fold',
+              'Accepts MESA car seat',
+              'Premium quality construction',
+            ],
+            con: 'Premium price point',
+          },
+          {
+            name: 'Baby Trend Expedition Jogger Stroller',
+            asin: 'B07BQXVFHG',
+            price: '$89',
+            rating: 4.4,
+            badge: 'Best Budget',
+            description:
+              "The best stroller value under $100. Accepts most infant car seats via an adapter, has a full recline seat, and includes all-terrain wheels for park walks and neighborhood sidewalks. No-frills but reliable.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07BQXVFHG?tag=buildthebaby-20',
+            pros: [
+              'Under $100',
+              'All-terrain wheels',
+              'Full recline',
+              'Large canopy',
+              'Jogging-capable',
+            ],
+            con: 'Bulkier fold than premium options',
+          },
+          {
+            name: 'Chicco Bravo Trio Travel System',
+            asin: 'B0BLX4GLJR',
+            price: '$299',
+            rating: 4.5,
+            description:
+              "Pairs the Chicco KeyFit 30 infant seat with a full-featured stroller. The KeyFit 30 clicks in without an adapter and the stroller converts for older kids. A reliable mid-range travel system from a trusted brand.",
+            affiliateUrl: 'https://www.amazon.com/dp/B0BLX4GLJR?tag=buildthebaby-20',
+            pros: [
+              'KeyFit 30 included',
+              'No adapter needed for Chicco seats',
+              'Multi-position recline',
+              'Adjustable handlebar',
+              'Compact fold',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Travel System vs. Separate Stroller and Car Seat',
+        body: "A travel system bundles an infant car seat with a compatible stroller frame. The infant seat clips directly into the stroller without an adapter, which means you can move a sleeping baby from car to stroller without waking them — one of the great parenting wins of the first few months.\n\nThe downside: travel system strollers tend to be heavier than standalone strollers. If you live in a city or do a lot of stairs and public transit, a lightweight stroller plus a separate car seat adapter might serve you better.\n\nFor suburban or car-dependent families, a travel system is almost always worth it for the newborn phase. Once your baby can sit upright (usually around 6 months), any full-recline stroller works well.",
+      },
+    ],
+    faq: [
+      {
+        q: 'At what age can my baby use a standard stroller seat?',
+        a: "Most pediatricians recommend waiting until your baby has full head control — typically around 4–6 months — before using a stroller seat that doesn't lie flat. Before that, use a lie-flat mode, bassinet attachment, or infant car seat in the stroller.",
+      },
+      {
+        q: 'Do I need a jogging stroller?',
+        a: "Only if you plan to actually run. Jogging strollers are heavier, harder to maneuver in small spaces, and not designed for infant car seat use. For everyday walks, a standard stroller with good suspension handles most terrain comfortably.",
+      },
+      {
+        q: 'How long will a stroller last?',
+        a: "A quality stroller should last from birth to 3–5 years. If you plan to have more children, investing in a convertible stroller (that can add a second seat) makes long-term sense. Brands like UPPAbaby and Bugaboo have strong second-hand markets if you want to recoup the cost.",
+      },
+      {
+        q: 'Can I use any infant car seat with any stroller?',
+        a: "No — car seat and stroller compatibility requires either a brand match (e.g., Graco seat + Graco stroller) or a universal adapter. Always verify compatibility before purchasing. Most major infant seats (Chicco KeyFit, Graco SnugRide) have adapters available for popular strollers.",
+      },
+      {
+        q: 'What features matter most for city use?',
+        a: "Lightweight and compact fold are paramount for city parents dealing with transit, stairs, and small apartments. Look for strollers under 20 lbs with a one-hand fold. All-terrain wheels are less important in a city; maneuverability in tight spaces matters more.",
+      },
+    ],
+  },
+
+  // ─── Guide 7: Best Baby Bouncers & Swings 2026 ───────────────────────────────
+  {
+    slug: 'best-baby-bouncers-swings-2026',
+    title: 'Best Baby Bouncers & Swings 2026',
+    metaTitle: 'Best Baby Bouncers & Swings 2026 — Build The Baby',
+    metaDescription:
+      'A bouncer or swing can be a sanity-saver in the first few months. Here are the best baby bouncers and swings for 2026, from budget picks to the 4moms mamaRoo.',
+    emoji: '🎠',
+    readTime: 9,
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    intro:
+      "In the first three months of life, many babies are happiest when they're moving — rocking, bouncing, or swinging. A good bouncer or swing gives you somewhere safe to put your baby during the alert awake periods between feeds, and can buy you 20–40 minutes of hands-free time that feels like a miracle. Here's what to look for and which products actually deliver.",
+    sections: [
+      {
+        heading: 'Bouncer vs. Swing: Which Do You Need?',
+        body: "Bouncers and swings do slightly different things.\n\nBouncers are simple, lightweight, and often motion-activated by the baby's own movement. They're easy to move from room to room, inexpensive, and typically fold flat for storage. The downside: the motion stops when the baby stops moving, which doesn't always keep a fussy baby calm on its own.\n\nSwings provide powered, consistent motion — front-to-back, side-to-side, or circular. They're heavier and less portable, but babies who need continuous motion to stay calm often respond better to swings. They also tend to have more features: music, sound options, and multiple speed settings.\n\nOur advice: if budget allows, try a bouncer first. Most parents only end up using one heavily. If your baby is a motion junkie who calms down only with sustained rocking, the swing becomes essential. Buy both only after you've identified what your specific baby responds to — which you can't know before they're born.",
+      },
+      {
+        heading: 'Safety First',
+        body: "The AAP guidelines are clear: swings and bouncers are for awake and supervised use only. Never let your baby sleep unsupervised in a swing or bouncer — they're not safe sleep surfaces. The semi-reclined position can cause a baby's head to fall forward, restricting their airway. This is especially true for newborns with low muscle tone.\n\nIf your baby falls asleep in a swing, transfer them to a flat, firm sleep surface (crib or bassinet) as soon as possible.",
+      },
+      {
+        heading: 'Our Top Picks',
+        body: 'Five options from $35 to $249, covering different budgets and use cases.',
+        products: [
+          {
+            name: 'Ingenuity Bounce & Soothe Vibrating Baby Bouncer',
+            asin: 'B07FKVDQDC',
+            price: '$35',
+            rating: 4.5,
+            badge: 'Best Budget Bouncer',
+            description:
+              "A simple, effective bouncer with three calming vibration modes and five points of recline. Lightweight and folds flat. One of the best-selling bouncers for good reason — it does exactly what parents need without the bloat.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07FKVDQDC?tag=buildthebaby-20',
+            pros: [
+              'Three vibration modes',
+              'Five recline positions',
+              'Folds flat for storage',
+              'Lightweight — easy to move',
+              'Removable toy bar',
+            ],
+            con: 'Motion relies on baby movement, not powered',
+          },
+          {
+            name: 'Fisher-Price Baby Bouncer Infant-to-Toddler Rocker',
+            asin: 'B0052GKFZY',
+            price: '$49',
+            rating: 4.7,
+            badge: 'Most Versatile',
+            description:
+              "Converts from a bouncer to a toddler rocker, extending the useful life to 40 lbs. Soothing vibrations and a calming motion that babies love. A perennial bestseller with decades of parent trust behind it.",
+            affiliateUrl: 'https://www.amazon.com/dp/B0052GKFZY?tag=buildthebaby-20',
+            pros: [
+              'Converts to toddler rocker (up to 40 lbs)',
+              'Soothing vibrations',
+              'Machine-washable seat pad',
+              'Removable toy bar',
+              'Great long-term value',
+            ],
+          },
+          {
+            name: 'Graco DuetSoothe Swing and Rocker',
+            asin: 'B01G3T8JXY',
+            price: '$129',
+            rating: 4.5,
+            description:
+              "A two-in-one: a full-size swing and a removable rocker in one unit. Six swing speeds, fifteen music and sound options, and the rocker detaches for portability. Great value for parents who want both in a single purchase.",
+            affiliateUrl: 'https://www.amazon.com/dp/B01G3T8JXY?tag=buildthebaby-20',
+            pros: [
+              '2-in-1: swing and portable rocker',
+              'Six swing speeds',
+              '15 music and sound options',
+              'Two swing directions',
+              'AC adapter — no batteries',
+            ],
+            con: 'Larger footprint than standalone bouncers',
+          },
+          {
+            name: '4moms mamaRoo Multi-Motion Baby Swing',
+            asin: 'B07YFPD9G8',
+            price: '$249',
+            rating: 4.4,
+            badge: 'Premium Pick',
+            description:
+              "Five unique motion patterns (car ride, wave, kangaroo, tree swing, rock-a-bye) plus Bluetooth app control. The mamaRoo mimics the natural motions parents use to soothe — and for babies who are hard to calm, it can genuinely change the game. Not cheap, but many parents swear by it.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07YFPD9G8?tag=buildthebaby-20',
+            pros: [
+              'Five unique motion patterns',
+              'Bluetooth app control',
+              'Built-in white noise sounds',
+              'Adjustable seat recline',
+              'Easy to clean fabric',
+            ],
+            con: 'Expensive — not for every budget',
+          },
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How long can my baby use a bouncer or swing?',
+        a: "Most bouncers have a weight limit of 25–30 lbs, which is usually reached around 9–12 months. Some, like the Fisher-Price rocker, extend to 40 lbs. Swings typically have lower weight limits of 20–25 lbs. Most babies stop using them well before the limit — usually around 4–6 months when they want more active engagement.",
+      },
+      {
+        q: 'Is it safe for my baby to sleep in a swing?',
+        a: "No. The AAP recommends against unsupervised sleep in any inclined surface, including swings and bouncers. If your baby falls asleep in a swing, transfer them to a firm, flat sleep surface as soon as you notice.",
+      },
+      {
+        q: 'Should I buy a bouncer and a swing?',
+        a: "Start with one — ideally based on what you know about your baby's temperament, which you won't fully know before birth. A bouncer is a lower-risk first purchase at $35–$50. If your baby needs sustained motion to stay calm, add a swing after the birth when you know what you're working with.",
+      },
+      {
+        q: 'Do batteries add up for baby swings?',
+        a: "Yes — older or budget swings can go through D batteries quickly, adding significant ongoing cost. Look for swings that include an AC adapter or USB power option. The Graco DuetSoothe, for example, plugs into the wall, which eliminates battery cost entirely.",
+      },
+      {
+        q: 'Are bouncers worth it if we only use them for a few months?',
+        a: "Absolutely — especially in the $35–$50 range. Even if you use one heavily for just two to three months, it pays for itself in hands-free time and fussiness management. Budget bouncers also have excellent resale value.",
+      },
+    ],
+  },
+
+  // ─── Guide 8: How to Choose a Baby Carrier ───────────────────────────────────
+  {
+    slug: 'how-to-choose-baby-carrier',
+    title: 'How to Choose a Baby Carrier (The Honest Guide)',
+    metaTitle: 'How to Choose a Baby Carrier 2026 — Build The Baby',
+    metaDescription:
+      "Baby carriers keep your hands free and your baby happy. Here's how to choose between wraps, ring slings, soft-structured carriers, and meh dais — with our top picks.",
+    emoji: '🤱',
+    readTime: 9,
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    intro:
+      "Babywearing is one of those things that sounds complicated from the outside but becomes second nature within a few days of practice. The right carrier keeps your baby calm, frees your hands, and makes everyday errands and around-the-house tasks dramatically easier. Here's how to choose the carrier that fits your body, your baby, and your lifestyle.",
+    sections: [
+      {
+        heading: 'Types of Baby Carriers',
+        body: "There are four main categories of baby carrier, each with different trade-offs:\n\nWrap carriers are long stretchy or woven pieces of fabric that you tie around your body. They offer the most customizable fit and the most full-body support for newborns, but the learning curve is real. Stretchy wraps (like the Solly or Boba) are best for newborns; woven wraps are used by experienced wearers who want more support for heavier babies.\n\nRing slings are a single length of fabric threaded through two rings, worn over one shoulder. They're quick to put on once you learn the technique, compact, and great for newborns and hip carries. They distribute weight less evenly than other carrier types — one shoulder carries all the load — which can fatigue some parents.\n\nSoft-structured carriers (SSC) are the most popular type for most parents. They have a structured waistband that distributes weight across your hips and shoulders, making them comfortable for extended wear. They're quick to put on and off, adjustable, and work from newborn to toddler (with an insert for newborns on some models). The Ergobaby 360, LILLEbaby, and Infantino are all in this category.\n\nMeh dais are a hybrid between a wrap and a structured carrier. They have a structured body panel but fabric straps you tie rather than buckle. Less common in the US but popular with experienced babywearers.",
+      },
+      {
+        heading: 'Key Features to Look For',
+        body: "Ergonomic seat position. The M-position (also called the frog-leg position) is the one recommended by pediatric hip specialists. Your baby's thighs should be spread around your torso with knees higher than the bottom, and the carrier should support their bottom — not let them dangle by their crotch.\n\nNewborn compatibility. Not every carrier works safely from birth. Look for a newborn insert or an ergonomic design that supports young babies in the appropriate position. Carriers that require newborns to face outward from birth are a red flag.\n\nWeight limit and longevity. A carrier you can use from 7 lbs to 45 lbs is a better investment than one that only covers the newborn phase.\n\nHeat and breathability. In warm climates, mesh carriers (like the Ergobaby Omni Breeze or the LILLEbaby Pursuit) are significantly more comfortable in summer.\n\nBack carry capability. As babies get heavier, a back carry distributes weight more comfortably and keeps your center of gravity better balanced. Most SSCs support back carrying from around 6 months.",
+      },
+      {
+        heading: 'Our Top Picks',
+        body: 'Three carriers across different budgets and use cases.',
+        products: [
+          {
+            name: 'Infantino Flip 4-in-1 Carrier',
+            asin: 'B00GKSD26Y',
+            price: '$25',
+            rating: 4.4,
+            badge: 'Best Budget',
+            description:
+              "Four carry positions, ergonomic seat, and no infant insert required (includes a detachable headrest for young babies). For budget-conscious parents who want a solid carrier without spending $150, this delivers.",
+            affiliateUrl: 'https://www.amazon.com/dp/B00GKSD26Y?tag=buildthebaby-20',
+            pros: [
+              'Four carry positions',
+              'No separate infant insert needed',
+              'Ergonomic M-position seat',
+              'Machine washable',
+              'Under $25',
+            ],
+            con: 'Narrower seat than premium carriers — less ideal for long carries',
+          },
+          {
+            name: 'Ergobaby Omni 360 All-Position Baby Carrier',
+            asin: 'B07D6YJKDM',
+            price: '$180',
+            rating: 4.7,
+            badge: "Editor's Pick",
+            description:
+              "The gold standard in soft-structured carriers. Four carry positions (front inward, front outward, hip, back), no infant insert required, and a wide ergonomic seat. Works from 7 lbs to 45 lbs. The carrier most babywearing educators reach for first.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07D6YJKDM?tag=buildthebaby-20',
+            pros: [
+              'No infant insert required',
+              'All four carry positions',
+              '7–45 lbs (birth to toddler)',
+              'Wide padded waistband',
+              'Machine washable',
+            ],
+          },
+          {
+            name: 'LILLEbaby Complete All Seasons Carrier',
+            asin: 'B00KT6PKHY',
+            price: '$140',
+            rating: 4.6,
+            description:
+              "Six carrying positions including a face-out option that many babies love from 4–6 months. The adjustable panel is unique: it expands as your baby grows. Good middle-ground between the Infantino's budget and the Ergobaby's price.",
+            affiliateUrl: 'https://www.amazon.com/dp/B00KT6PKHY?tag=buildthebaby-20',
+            pros: [
+              'Six carry positions',
+              'Expanding panel grows with baby',
+              'Face-out supported',
+              'All-season breathable',
+              '7–45 lbs',
+            ],
+          },
+        ],
+      },
+      {
+        heading: 'Babywearing Tips for New Parents',
+        body: "Start at home. Practice putting on and adjusting the carrier in your living room before you try it out in public. Most carries take a few tries to feel natural.\n\nCheck TICKS. Tight, In view at all times, Close enough to kiss, Keep chin off chest, Supported back. These five points from the UK Sling Consortium are the safety check for any carry.\n\nGet a fitting. Many areas have babywearing groups and library programs where experienced wearers will help you find the right fit — often for free. It's worth an hour to get it right.\n\nLayer appropriately. Wearing a baby adds warmth for both of you. In summer, dress your baby one layer lighter than you would without the carrier. In winter, a carrier cover (like the Ergobaby cover) acts as an extra layer for the baby without bundling them into a thick snowsuit.",
+      },
+    ],
+    faq: [
+      {
+        q: 'What age can I start babywearing?',
+        a: "Most carriers designed for newborns can be used from birth (7–8 lbs minimum). Stretchy wraps are particularly popular for newborns due to their full-body support. Confirm your carrier supports newborn use before putting a young baby in it.",
+      },
+      {
+        q: 'Is it safe to babywear while doing chores?',
+        a: "Yes, with common sense. Avoid activities near heat sources (stoves, hot liquids), bending over sharply, or anything with fall risk. Walking around, light housework, shopping, and errands are all fine and exactly what carriers are designed for.",
+      },
+      {
+        q: 'Do dads find carriers comfortable?',
+        a: "Yes — most soft-structured carriers adjust to accommodate a wide range of body types and sizes. The Ergobaby 360 and LILLEbaby in particular have adjustable waistbands and torso heights that work well for both partners to share.",
+      },
+      {
+        q: 'Can I use a carrier if I had a C-section?',
+        a: "Check with your doctor first — most parents are cleared to babywear within a few weeks of a C-section, but it depends on your recovery. When cleared, wrap carriers that don't put pressure on the incision area are often more comfortable initially than those with a wide rigid waistband.",
+      },
+      {
+        q: 'What is the TICKS rule?',
+        a: "TICKS stands for: Tight (carrier snug to your body), In view at all times (you can see your baby's face), Close enough to kiss (baby's head is close enough to kiss with a small tilt), Keep chin off chest (baby's chin is not pressed to their chest), and Supported back (baby's back is supported in a natural curved position). Run through this checklist every time you put on the carrier.",
+      },
+    ],
+  },
+
+  // ─── Guide 9: Best Diaper Bags 2026 ──────────────────────────────────────────
+  {
+    slug: 'best-diaper-bags-2026',
+    title: 'Best Diaper Bags 2026 (Tested by Real Parents)',
+    metaTitle: 'Best Diaper Bags 2026 — Build The Baby',
+    metaDescription:
+      "The best diaper bags of 2026: backpacks, totes, and hybrid options that keep you organized without looking like you're hauling a diaper bag.",
+    emoji: '👜',
+    readTime: 8,
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    intro:
+      "A good diaper bag is one of the most-used pieces of baby gear you'll own — and one that's worth getting right the first time. The best diaper bags hold everything you need, stay organized under stress, and look good enough that you'll actually want to use them. Here are the best options for 2026, from budget backpacks to premium leather totes.",
+    sections: [
+      {
+        heading: 'What to Look for in a Diaper Bag',
+        body: "Capacity. You'll need space for diapers (bring more than you think), wipes, a changing pad, spare onesie, burp cloths, bottles, snacks, and all your own stuff. A minimum of 20–25 liters is practical for day trips. Going out for more than a few hours? You'll want closer to 30 liters.\n\nInsulated pockets. Bottles and snacks need to stay at the right temperature. Insulated side pockets are non-negotiable once your baby is eating solids or taking a bottle.\n\nStroller straps. The ability to hang the bag from stroller handles frees your shoulders on longer outings. Most quality bags include these.\n\nEasy cleaning. Babies are messy. Look for wipeable exterior fabric or machine-washable linings. Dark interior linings make it harder to find things — light-colored or patterned linings are better.\n\nChanging pad. Most bags include a foldable changing pad. Check that it's actually padded enough to use and easy to wipe clean.\n\nStyle longevity. If you'll carry this for two to three years, it needs to look good at the playground, at a restaurant, and at the airport. Avoid anything that screams 'diaper bag' if that matters to you — backpack styles blend into daily use far better than traditional patterns.",
+      },
+      {
+        heading: 'Backpack vs. Tote: Which Is Better?',
+        body: "Backpacks distribute weight across both shoulders, are easier to navigate hands-free with a baby on your hip, and don't slide off your shoulder when you lean over. For active parents or solo outings, backpacks almost always win.\n\nTotes are faster to access — zip open, reach in, done. If you're typically in low-intensity situations (coffee, visiting family, short errands) and have a partner with you, a tote works fine. Many parents end up with one of each for different contexts.",
+      },
+      {
+        heading: 'Our Top Picks',
+        body: 'Four bags across different budgets and styles.',
+        products: [
+          {
+            name: 'Hap Tim Diaper Bag Backpack',
+            asin: 'B07CQFZ1FK',
+            price: '$40',
+            rating: 4.6,
+            badge: 'Best Budget',
+            description:
+              "16 pockets, insulated bottle holders, stroller straps, USB charging port, and a padded changing pad — all under $40. It's not the most stylish bag, but the organizational system is excellent and the price is unbeatable for what you get.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07CQFZ1FK?tag=buildthebaby-20',
+            pros: [
+              '16 pockets',
+              'Insulated bottle pockets',
+              'USB charging port',
+              'Stroller straps included',
+              'Padded changing pad',
+            ],
+            con: 'Utilitarian design — clearly a diaper bag',
+          },
+          {
+            name: 'Skip Hop Forma Diaper Backpack',
+            asin: 'B0731TBBWF',
+            price: '$99',
+            rating: 4.6,
+            badge: 'Best Mid-Range',
+            description:
+              "The Skip Hop Forma has earned its reputation through years of parent use. Minimalist design that looks like a regular backpack, insulated pockets, magnetic closure top, and enough organization to keep two kids' stuff sorted. Works as an everyday bag when you're done with diapers.",
+            affiliateUrl: 'https://www.amazon.com/dp/B0731TBBWF?tag=buildthebaby-20',
+            pros: [
+              'Looks like a regular backpack',
+              'Insulated bottle pockets',
+              'Magnetic top closure',
+              'Stroller straps',
+              'Doubles as everyday bag',
+            ],
+          },
+          {
+            name: 'Freshly Picked Classic Convertible Diaper Bag',
+            asin: 'B01LXRWDTL',
+            price: '$150',
+            rating: 4.5,
+            badge: 'Best Premium',
+            description:
+              "Vegan leather that doesn't look like a diaper bag at all — it looks like a stylish everyday tote. Converts from tote to backpack. Holds everything you need for a full day out, with multiple interior pockets and a padded changing mat.",
+            affiliateUrl: 'https://www.amazon.com/dp/B01LXRWDTL?tag=buildthebaby-20',
+            pros: [
+              'Vegan leather — stylish and wipeable',
+              'Tote or backpack mode',
+              'No diaper-bag branding',
+              'Padded changing mat',
+              'Holds up for years',
+            ],
+            con: 'Smaller capacity than technical diaper bags',
+          },
+          {
+            name: "Itzy Ritzy Dream Backpack Diaper Bag",
+            asin: 'B07VQJ3S3D',
+            price: '$120',
+            rating: 4.7,
+            badge: 'Parent Favorite',
+            description:
+              "One of the best-reviewed diaper bag backpacks on the market. Large main compartment, insulated pockets, wipeable interior, and a stylish design that works for any parent. The stroller straps are among the easiest to use on any bag tested.",
+            affiliateUrl: 'https://www.amazon.com/dp/B07VQJ3S3D?tag=buildthebaby-20',
+            pros: [
+              'Wipeable interior lining',
+              'Insulated bottle pockets',
+              'Easy stroller straps',
+              'Stylish design',
+              'Large main compartment',
+            ],
+          },
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'How many diapers should I pack?',
+        a: "The general rule: one diaper per hour of outing, plus two extras. For a 3-hour trip, pack 5 diapers. Newborns go through more (up to 12 per day), so pack extra in the early months. Better to carry too many than run out in a restaurant.",
+      },
+      {
+        q: 'Do I need a separate diaper bag if I already have a large backpack?',
+        a: "Not necessarily. A large backpack with a few ziplock bags and a portable changing pad can work fine — especially if you're already used to your bag's organization system. Purpose-built diaper bags earn their keep with insulated pockets and dedicated compartments that keep things accessible under stress.",
+      },
+      {
+        q: 'How long will I use a diaper bag?',
+        a: "Most parents use a dedicated diaper bag for 2–3 years. If you get a bag with a good design that works as a regular backpack or tote, you can keep using it well after the diaper phase ends.",
+      },
+      {
+        q: 'Should both parents share one bag?',
+        a: "Sharing works well with a backpack style — whoever has the baby takes the bag. Many parents get a small secondary bag (or a mini skip hop Forma) for the other parent or for short solo outings where the full bag is overkill.",
+      },
+      {
+        q: 'What should always be in a diaper bag?',
+        a: "Minimum kit: 4–6 diapers, wipes, a changing pad, diaper rash cream, one spare onesie, a burp cloth, a pacifier if your baby uses one, and any feeding supplies. For outings over 2 hours, add a complete change of clothes and extra bottles or snacks.",
+      },
+    ],
+  },
+
+  // ─── Guide 10: Newborn Sleep Guide ───────────────────────────────────────────
+  {
+    slug: 'newborn-sleep-guide',
+    title: 'Newborn Sleep Guide for Exhausted Parents',
+    metaTitle: 'Newborn Sleep Guide 2026 — Build The Baby',
+    metaDescription:
+      "Everything exhausted new parents need to know about newborn sleep: safe sleep rules, how much sleep is normal, wake windows, and when it gets better.",
+    emoji: '😴',
+    readTime: 11,
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    intro:
+      "Newborn sleep is one of the most talked-about topics in parenting — and one of the most misunderstood. If you're in the thick of it, reading this at 3am with a baby on your chest, know this: what you're experiencing is normal, it won't last forever, and there are things you can do to make it more manageable. Here's what you actually need to know.",
+    sections: [
+      {
+        heading: 'How Much Do Newborns Sleep?',
+        body: "Newborns (0–4 weeks) sleep 14–17 hours per day. The catch: they do it in 2–4 hour stretches around the clock, with no preference for nighttime. Their circadian rhythm — the internal clock that tells humans when to sleep and when to wake — isn't functional yet. It develops gradually between 6–12 weeks.\n\nBy 6 weeks, most babies start having one longer stretch (3–5 hours) per night. By 3–4 months, many (not all) are doing a 5–6 hour stretch. By 6 months, some babies sleep 6–8 consecutive hours. These are averages — there's enormous normal variation.\n\nWhat this means practically: in the first 6–8 weeks, there is no sleep training, no schedule, and no predictable pattern to optimize. You're in survival mode, and that's the appropriate response.",
+      },
+      {
+        heading: 'Safe Sleep: The Non-Negotiables',
+        body: "The AAP safe sleep guidelines are the single most important thing to know before your baby comes home. Sudden Infant Death Syndrome (SIDS) and sleep-related deaths are real, and the guidelines exist because they demonstrably reduce risk.\n\nThe ABCs of safe sleep:\n\nAlone. Baby sleeps alone in their sleep space — no bed-sharing, no sleeping on an adult's chest (once you're both asleep, you lose awareness of what's happening).\n\nBack. Always place baby on their back to sleep, for every sleep, until their first birthday.\n\nCrib (or bassinet). A firm, flat surface in a safety-approved crib or bassinet. Nothing else in the sleep space: no pillows, no blankets, no bumpers, no positioners, no stuffed animals.\n\nThe sleep surface should be flat (not inclined). This means swings, bouncers, bouncers, and car seats are not appropriate for unsupervised sleep.\n\nRoom-sharing is recommended (but not bed-sharing) for at least the first 6 months, preferably the first year. Having your baby sleep in a bassinet in your room reduces SIDS risk by up to 50%.",
+      },
+      {
+        heading: 'Wake Windows: The Key to Better Sleep',
+        body: "One of the most useful frameworks for new parents: wake windows. A wake window is the amount of time your baby can comfortably stay awake before they need to sleep again.\n\nFor a newborn (0–8 weeks), the wake window is only 45–60 minutes. That's it — wake, feed, maybe a tiny bit of alert time, then back to sleep. If you miss this window, babies often get overtired, which counterintuitively makes them harder to settle.\n\nAs babies grow, wake windows lengthen:\n- 2–3 months: 60–90 minutes\n- 3–4 months: 90 minutes to 2 hours\n- 4–6 months: 1.5–2.5 hours\n- 6–9 months: 2–3 hours\n\nWatching the clock (not the baby's cues alone) and timing sleep to wake windows is one of the simplest things you can do to improve newborn sleep quality. An overtired baby fights sleep; a appropriately tired baby falls asleep more easily.",
+      },
+      {
+        heading: 'Sleep Products That Actually Help',
+        body: "Not everything marketed for baby sleep actually works. Here are the products with real evidence behind them.",
+        products: [
+          {
+            name: 'Halo BassiNest Swivel Sleeper',
+            asin: 'B00GUYGFIG',
+            price: '$199',
+            rating: 4.5,
+            badge: 'Best Bedside Bassinet',
+            description:
+              "The walls lower for side access, making nighttime feeds dramatically easier — especially after a C-section. Rotates 360 degrees so the baby is always within arm's reach from bed. The AAP-recommended room-sharing setup made practical.",
+            affiliateUrl: 'https://www.amazon.com/dp/B00GUYGFIG?tag=buildthebaby-20',
+            pros: [
+              'Walls lower for hands-free access',
+              '360-degree rotation',
+              'Stays connected to your bed',
+              'Built-in vibration and sounds',
+              'JPMA certified',
+            ],
+            con: 'Expensive for a product babies outgrow in 4–6 months',
+          },
+          {
+            name: 'Yogasleep Dohm Classic White Noise Machine',
+            asin: 'B00HD0ELFK',
+            price: '$34',
+            rating: 4.6,
+            badge: 'Best White Noise',
+            description:
+              "The original fan-based sound machine. Non-looping natural white noise that masks household sounds — the easiest, most science-backed tool for improving infant sleep onset and duration.",
+            affiliateUrl: 'https://www.amazon.com/dp/B00HD0ELFK?tag=buildthebaby-20',
+            pros: [
+              'Real fan sound — never loops',
+              'Adjustable tone and volume',
+              'Evidence-backed for sleep',
+              'Durable — lasts for years',
+            ],
+          },
+          {
+            name: 'Love to Dream Swaddle UP',
+            asin: 'B0CLCBQQN2',
+            price: '$29',
+            rating: 4.5,
+            badge: 'Best Swaddle',
+            description:
+              "Arms-up swaddle design allows hand-to-mouth self-soothing while keeping the swaddle secure. Many parents find this resolves the 'breaks free of every swaddle' problem and extends sleep stretches.",
+            affiliateUrl: 'https://www.amazon.com/dp/B0CLCBQQN2?tag=buildthebaby-20',
+            pros: [
+              'Arms-up allows self-soothing',
+              'Zip closure — fast in the dark',
+              'Stretchy but secure',
+              'Transition versions for weaning',
+            ],
+          },
+          {
+            name: 'Owlet Dream Sock Baby Monitor',
+            asin: 'B0C49SF7RW',
+            price: '$149',
+            rating: 4.3,
+            description:
+              "Tracks oxygen levels and heart rate during sleep and alerts you to concerning changes. Not a medical device and not a SIDS prevention tool — but many parents find the peace of mind helps them sleep better, which is its own benefit.",
+            affiliateUrl: 'https://www.amazon.com/dp/B0C49SF7RW?tag=buildthebaby-20',
+            pros: [
+              'Tracks heart rate and oxygen',
+              'App alerts for concerning readings',
+              'Comfortable fabric sock design',
+              'Helps anxious parents sleep',
+            ],
+            con: 'Not a SIDS prevention device — peace of mind only',
+          },
+        ],
+      },
+      {
+        heading: 'When Does It Get Better?',
+        body: "The honest answer: it varies a lot. But here are the milestones most parents report:\n\n6–8 weeks: A first real longer stretch appears, often 3–5 hours. It won't be consistent yet, but you'll get a taste.\n\n12 weeks: Circadian rhythm starts to develop. Baby starts to distinguish night from day. Nighttime sleep consolidates.\n\n4 months: A major developmental shift — the '4-month sleep regression.' Sleep often gets worse before it gets better as babies move into more adult-like sleep cycles. This is normal and temporary.\n\n6 months: Many (not all) babies can sleep 6+ hours without a feed. This is when sleep training becomes a realistic option if you want to pursue it.\n\nThe best thing you can do in the newborn phase: take shifts with your partner if possible, sleep when the baby sleeps without guilt, and don't compare your baby's sleep to anyone else's. All babies are different. All of them eventually sleep through the night.",
+      },
+    ],
+    faq: [
+      {
+        q: 'Should I wake my newborn to feed?',
+        a: "In the first few weeks, yes — especially for breastfed babies. Most pediatricians recommend waking a newborn to feed every 2–3 hours until they've regained their birth weight (usually around 2 weeks). After that, follow your pediatrician's guidance — many will tell you it's okay to let baby sleep if they're gaining weight well.",
+      },
+      {
+        q: 'Is it okay for my baby to sleep in a swing?',
+        a: "No — not unsupervised. Swings and bouncers are for awake supervised use only. The semi-reclined position can cause a sleeping baby's head to fall forward, restricting their airway. If your baby falls asleep in a swing, transfer them to a flat sleep surface as soon as you notice.",
+      },
+      {
+        q: 'When can I start sleep training?',
+        a: "Most sleep consultants and pediatricians recommend waiting until at least 4–6 months — after the 4-month developmental shift and once baby is developmentally ready to go longer between feeds at night. There are multiple methods (Ferber, extinction, chair method, fading) with different levels of crying involved. All have evidence supporting them.",
+      },
+      {
+        q: 'What is the 4-month sleep regression?',
+        a: "Around 3.5–4.5 months, babies permanently shift to a more adult-like sleep cycle structure — cycling between light and deep sleep every 45–60 minutes. This is a normal neurological development, not something you did wrong. It often causes babies who were sleeping in longer stretches to start waking more frequently. It typically stabilizes within a few weeks.",
+      },
+      {
+        q: 'Do I need blackout curtains?',
+        a: "They help, especially for daytime naps, because light suppresses melatonin production. Many parents find naps lengthen in a properly darkened room. They're not essential in the newborn phase but become more useful after 8–12 weeks when sleep pressure and circadian rhythm start developing.",
+      },
+    ],
+  },
 ]
 
 export function getGuideBySlug(slug: string): Guide | undefined {
