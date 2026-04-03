@@ -1,3 +1,6 @@
+'use client'
+
+import { useRegistry } from '@/context/RegistryContext'
 import { Product } from '@/lib/data'
 
 interface ProductCardProps {
@@ -35,6 +38,9 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export default function ProductCard({ product, index }: ProductCardProps) {
+  const { selections, addToRegistry, removeFromRegistry } = useRegistry()
+  const isSelected = Boolean(selections[product.id])
+
   return (
     <div className="bg-white rounded-2xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
       {/* Image placeholder */}
@@ -73,6 +79,19 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             View on Amazon →
           </a>
         </div>
+
+        <button
+          onClick={() =>
+            isSelected ? removeFromRegistry(product.id) : addToRegistry(product)
+          }
+          className={`mt-3 w-full font-semibold text-sm px-4 py-2 rounded-xl border transition-colors ${
+            isSelected
+              ? 'bg-green-500 hover:bg-green-600 text-white border-green-500'
+              : 'bg-white hover:bg-amber-50 text-amber-600 border-amber-400 hover:border-amber-500'
+          }`}
+        >
+          {isSelected ? '✓ Added to Registry' : '+ Add to Registry'}
+        </button>
       </div>
     </div>
   )

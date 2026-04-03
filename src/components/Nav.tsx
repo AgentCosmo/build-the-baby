@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { categoryNavItems } from '@/lib/data'
+import RegistryNavBadge from '@/components/RegistryNavBadge'
 
 export default function Nav() {
   return (
@@ -25,6 +26,9 @@ export default function Nav() {
               </Link>
             ))}
           </nav>
+
+          {/* Registry link */}
+          <RegistryNavBadge />
 
           {/* Mobile: categories label */}
           <Link
