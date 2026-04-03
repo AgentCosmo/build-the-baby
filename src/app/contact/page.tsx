@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact — Build The Baby',
   description:
-    'Have a question, suggestion, or product to recommend? We\'d love to hear from you at hello@buildthebaby.com.',
+    'Have a question, suggestion, or product to recommend? We\'d love to hear from you at support@buildthebaby.com.',
 }
 
 export default function ContactPage() {
@@ -36,10 +36,10 @@ export default function ContactPage() {
             just want to say hello — we read every message and do our best to reply within a day or two.
           </p>
           <a
-            href="mailto:hello@buildthebaby.com"
+            href="mailto:support@buildthebaby.com"
             className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3.5 rounded-2xl transition-colors shadow-md text-lg"
           >
-            ✉️ hello@buildthebaby.com
+            ✉️ support@buildthebaby.com
           </a>
           <p className="text-sm text-stone-400 mt-6">We read every message. Promise.</p>
         </div>
