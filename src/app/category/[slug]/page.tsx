@@ -28,6 +28,10 @@ export default async function CategoryPage({ params }: Props) {
 
   if (!category) notFound()
 
+  const currentIndex = categories.findIndex((c) => c.slug === slug)
+  const nextCategory = categories[currentIndex + 1] ?? null
+  const isLastCategory = currentIndex === categories.length - 1
+
   return (
     <>
       {/* Category hero */}
@@ -81,10 +85,33 @@ export default async function CategoryPage({ params }: Props) {
         </p>
       </div>
 
-      {/* Other categories */}
+      {/* Next category / registry CTA */}
       <section className="bg-gradient-to-br from-amber-50 to-rose-50 border-t border-amber-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-xl font-bold text-stone-700 mb-6">Browse Other Categories</h2>
+          {/* Next button */}
+          <div className="flex justify-end mb-8">
+            {isLastCategory ? (
+              <Link
+                href="/registry"
+                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3.5 rounded-2xl transition-colors shadow-md text-base"
+              >
+                <span>🛒</span>
+                <span>View My Registry</span>
+                <span>→</span>
+              </Link>
+            ) : (
+              <Link
+                href={`/category/${nextCategory!.slug}`}
+                className="inline-flex items-center gap-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-6 py-3.5 rounded-2xl transition-colors shadow-md text-base"
+              >
+                <span>Next: {nextCategory!.emoji} {nextCategory!.name}</span>
+                <span>→</span>
+              </Link>
+            )}
+          </div>
+
+          {/* Other categories */}
+          <h2 className="text-xl font-bold text-stone-700 mb-4">Browse Other Categories</h2>
           <div className="flex flex-wrap gap-3">
             {categories
               .filter((c) => c.slug !== slug)
