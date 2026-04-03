@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { useRegistry } from '@/context/RegistryContext'
-import { Product } from '@/lib/data'
+import { Product, getAmazonImageUrl } from '@/lib/data'
 
 interface ProductCardProps {
   product: Product
@@ -43,14 +44,21 @@ export default function ProductCard({ product, index }: ProductCardProps) {
 
   return (
     <div className="bg-white rounded-2xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
-      {/* Image placeholder */}
-      <div className="bg-gradient-to-br from-amber-50 to-rose-50 h-48 flex items-center justify-center relative">
-        <span className="text-6xl opacity-30">🍼</span>
-        <span className="absolute top-3 left-3 text-xs text-stone-400 font-mono">
-          #{String(index + 1).padStart(2, '0')}
-        </span>
+      {/* Product image */}
+      <div className="bg-gradient-to-br from-amber-50 to-rose-50 h-48 flex items-center justify-center relative overflow-hidden">
+        {product.asin ? (
+          <Image
+            src={getAmazonImageUrl(product.asin)}
+            alt={product.name}
+            fill
+            className="object-contain p-3"
+            unoptimized
+          />
+        ) : (
+          <span className="text-6xl opacity-30">🍼</span>
+        )}
         {product.tag && (
-          <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded-full">
+          <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs font-semibold px-2 py-1 rounded-full z-10">
             {product.tag}
           </span>
         )}
