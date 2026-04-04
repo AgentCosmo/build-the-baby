@@ -56,6 +56,7 @@ export default function RegistryPage() {
 
   const [shareState, setShareState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [shareError, setShareError] = useState('')
+  const [shareUrl, setShareUrl] = useState('')
   const [existingRegistryId, setExistingRegistryId] = useState<string | null>(null)
 
   useEffect(() => {
@@ -67,12 +68,13 @@ export default function RegistryPage() {
 
   async function copyShareLink(registryId: string) {
     const url = `https://www.buildthebaby.com/registry/${registryId}`
+    setShareUrl(url)
     try {
       await navigator.clipboard.writeText(url)
-      setShareState('success')
     } catch {
-      setShareState('success') // still show success even if clipboard fails
+      // clipboard failed — url will still be shown visibly below
     }
+    setShareState('success')
   }
 
   async function handleShareRegistry() {
@@ -216,8 +218,23 @@ export default function RegistryPage() {
 
             {/* Share Registry button */}
             {shareState === 'success' ? (
-              <div className="block w-full text-center bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-base px-6 py-3.5 rounded-2xl">
-                Link copied! Share it with family &amp; friends 🎉
+              <div className="bg-emerald-50 border border-emerald-200 rounded-2xl px-5 py-4">
+                <p className="text-emerald-700 font-semibold text-sm text-center mb-3">🎉 Your registry link is ready!</p>
+                <div className="flex items-center gap-2">
+                  <input
+                    readOnly
+                    value={shareUrl}
+                    onFocus={(e) => e.target.select()}
+                    className="flex-1 text-xs bg-white border border-emerald-200 rounded-xl px-3 py-2 text-stone-600 font-mono truncate focus:outline-none focus:ring-2 focus:ring-emerald-300"
+                  />
+                  <button
+                    onClick={() => navigator.clipboard.writeText(shareUrl).catch(() => {})}
+                    className="shrink-0 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold px-3 py-2 rounded-xl transition-colors"
+                  >
+                    Copy
+                  </button>
+                </div>
+                <p className="text-xs text-emerald-600 text-center mt-2">Share this link with family &amp; friends</p>
               </div>
             ) : existingRegistryId ? (
               <button
