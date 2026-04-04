@@ -61,6 +61,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Starter Builds CTA */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <Link
+          href="/starter-builds"
+          className="group flex flex-col sm:flex-row items-center justify-between gap-4 bg-gradient-to-r from-amber-50 to-rose-50 border border-amber-200 rounded-2xl px-6 py-5 hover:shadow-md transition-shadow"
+        >
+          <div className="flex items-center gap-4">
+            <span className="text-3xl">✨</span>
+            <div>
+              <p className="font-bold text-stone-800 text-base">Not sure where to start?</p>
+              <p className="text-stone-500 text-sm mt-0.5">Try a Starter Build — pre-made registries for every budget.</p>
+            </div>
+          </div>
+          <span className="shrink-0 inline-flex items-center gap-1.5 bg-amber-500 group-hover:bg-amber-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl transition-colors">
+            Try a Starter Build <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+          </span>
+        </Link>
+      </section>
+
       {/* Category Cards */}
       <section id="categories" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">

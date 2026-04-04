@@ -67,6 +67,14 @@ export default function Nav() {
               )}
             </div>
 
+            {/* Starter Builds */}
+            <Link
+              href="/starter-builds"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium text-stone-600 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+            >
+              ✨ Starter Builds
+            </Link>
+
             {/* Guides */}
             <Link
               href="/guides"
@@ -114,7 +122,15 @@ export default function Nav() {
                 <span className="font-medium">{name}</span>
               </Link>
             ))}
-            <div className="border-t border-stone-100 pt-2 mt-1">
+            <div className="border-t border-stone-100 pt-2 mt-1 space-y-1">
+              <Link
+                href="/starter-builds"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm font-medium text-stone-600 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+              >
+                <span>✨</span>
+                <span>Starter Builds</span>
+              </Link>
               <Link
                 href="/guides"
                 onClick={() => setMobileMenuOpen(false)}
