@@ -6,13 +6,11 @@ import { useRegistry } from '@/context/RegistryContext'
 
 export default function StarterBuildsPage() {
   const router = useRouter()
-  const { addToRegistry } = useRegistry()
+  const { loadRegistry } = useRegistry()
 
   function loadBuild(productIds: string[]) {
     const products = resolveProducts(productIds)
-    for (const product of products) {
-      addToRegistry(product)
-    }
+    loadRegistry(products)
     router.push('/registry')
   }
 

@@ -21,6 +21,7 @@ interface RegistryContextValue {
   addToRegistry: (product: Product) => void
   removeFromRegistry: (productId: string) => void
   clearRegistry: () => void
+  loadRegistry: (products: Product[]) => void
   totalItems: number
   estimatedTotal: number
 }
@@ -68,6 +69,11 @@ export function RegistryProvider({ children }: { children: ReactNode }) {
     persist({})
   }
 
+  function loadRegistry(products: Product[]) {
+    const next = Object.fromEntries(products.map((p) => [p.id, p]))
+    persist(next)
+  }
+
   const totalItems = Object.keys(selections).length
   const estimatedTotal = Object.values(selections).reduce(
     (sum, p) => sum + parseMinPrice(p.priceRange),
@@ -76,7 +82,7 @@ export function RegistryProvider({ children }: { children: ReactNode }) {
 
   return (
     <RegistryContext.Provider
-      value={{ selections, addToRegistry, removeFromRegistry, clearRegistry, totalItems, estimatedTotal }}
+      value={{ selections, addToRegistry, removeFromRegistry, clearRegistry, loadRegistry, totalItems, estimatedTotal }}
     >
       {children}
     </RegistryContext.Provider>
