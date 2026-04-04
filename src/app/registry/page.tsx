@@ -58,6 +58,8 @@ export default function RegistryPage() {
   const [shareError, setShareError] = useState('')
   const [shareUrl, setShareUrl] = useState('')
   const [existingRegistryId, setExistingRegistryId] = useState<string | null>(null)
+  const [showNameForm, setShowNameForm] = useState(false)
+  const [registryName, setRegistryName] = useState('Our Baby Registry')
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -79,6 +81,7 @@ export default function RegistryPage() {
 
   async function handleShareRegistry() {
     if (products.length === 0) return
+    setShowNameForm(false)
     setShareState('loading')
     setShareError('')
 
@@ -88,7 +91,7 @@ export default function RegistryPage() {
       // Insert registry row
       const { error: registryError } = await supabase
         .from('registries')
-        .insert({ id: registryId, name: "Baby Registry" })
+        .insert({ id: registryId, name: registryName.trim() || 'Our Baby Registry' })
 
       if (registryError) throw registryError
 
@@ -244,9 +247,37 @@ export default function RegistryPage() {
               >
                 {shareState === 'loading' ? 'Copying...' : '🔗 Copy Share Link'}
               </button>
+            ) : showNameForm ? (
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
+                <p className="text-stone-700 font-semibold text-sm mb-3">What should we call your registry?</p>
+                <input
+                  type="text"
+                  value={registryName}
+                  onChange={(e) => setRegistryName(e.target.value)}
+                  placeholder="e.g. Sarah & Mike's Baby Registry"
+                  className="w-full text-sm bg-white border border-amber-200 rounded-xl px-3 py-2 text-stone-700 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-300 mb-3"
+                  onKeyDown={(e) => e.key === 'Enter' && handleShareRegistry()}
+                  autoFocus
+                />
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleShareRegistry}
+                    disabled={shareState === 'loading'}
+                    className="flex-1 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm px-4 py-2 rounded-xl transition-colors disabled:opacity-60"
+                  >
+                    Save &amp; Share
+                  </button>
+                  <button
+                    onClick={() => setShowNameForm(false)}
+                    className="px-4 py-2 text-sm font-medium text-stone-500 hover:text-stone-700 border border-stone-200 rounded-xl bg-white hover:bg-stone-50 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
             ) : (
               <button
-                onClick={handleShareRegistry}
+                onClick={() => setShowNameForm(true)}
                 disabled={shareState === 'loading'}
                 className="block w-full text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
               >

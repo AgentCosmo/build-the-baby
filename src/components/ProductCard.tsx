@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import { useRegistry } from '@/context/RegistryContext'
+import { useCompare } from '@/context/CompareContext'
 import { Product, getAmazonImageUrl } from '@/lib/data'
 
 interface ProductCardProps {
@@ -40,7 +42,23 @@ function StarRating({ rating }: { rating: number }) {
 
 export default function ProductCard({ product, index }: ProductCardProps) {
   const { selections, addToRegistry, removeFromRegistry } = useRegistry()
+  const { addToCompare, removeFromCompare, isInCompare } = useCompare()
   const isSelected = Boolean(selections[product.id])
+  const inCompare = isInCompare(product.id)
+  const [compareError, setCompareError] = useState<string | null>(null)
+
+  function handleCompareToggle() {
+    if (inCompare) {
+      removeFromCompare(product.id)
+      setCompareError(null)
+    } else {
+      const error = addToCompare(product)
+      if (error) {
+        setCompareError(error)
+        setTimeout(() => setCompareError(null), 3000)
+      }
+    }
+  }
 
   return (
     <div className="bg-white rounded-2xl border border-stone-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col">
@@ -100,6 +118,21 @@ export default function ProductCard({ product, index }: ProductCardProps) {
         >
           {isSelected ? '✓ Added to Registry' : '+ Add to Registry'}
         </button>
+
+        <button
+          onClick={handleCompareToggle}
+          className={`mt-2 w-full font-medium text-xs px-4 py-1.5 rounded-xl border transition-colors ${
+            inCompare
+              ? 'bg-stone-700 hover:bg-stone-800 text-white border-stone-700'
+              : 'bg-white hover:bg-stone-50 text-stone-500 border-stone-200 hover:border-stone-300'
+          }`}
+        >
+          {inCompare ? '✓ Comparing' : 'Compare'}
+        </button>
+
+        {compareError && (
+          <p className="mt-1.5 text-xs text-rose-500 text-center">{compareError}</p>
+        )}
       </div>
     </div>
   )

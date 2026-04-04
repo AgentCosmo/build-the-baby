@@ -5,6 +5,8 @@ import './globals.css'
 import Nav from '@/components/Nav'
 import Link from 'next/link'
 import { RegistryProvider } from '@/context/RegistryContext'
+import { CompareProvider } from '@/context/CompareContext'
+import CompareBar from '@/components/CompareBar'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -50,8 +52,11 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col antialiased bg-[#fdfaf6] text-stone-900">
         <RegistryProvider>
+        <CompareProvider>
         <Nav />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-16">{children}</main>
+        <CompareBar />
+        </CompareProvider>
         </RegistryProvider>
         <footer className="border-t border-amber-100 bg-white mt-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-stone-400">

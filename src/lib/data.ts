@@ -7,6 +7,14 @@ export interface Product {
   rating: number
   tag?: string
   asin?: string
+  specs?: {
+    ageRange?: string
+    weight?: string
+    foldDimensions?: string
+    material?: string
+    certifications?: string
+    [key: string]: string | undefined
+  }
 }
 
 export function getAmazonImageUrl(asin: string): string {
@@ -39,6 +47,13 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B07XJ8C8F7?tag=buildthebaby-20',
         rating: 4.8,
         tag: "Editor's Pick",
+        specs: {
+          ageRange: 'Birth–6 months',
+          weight: '38 lbs',
+          foldDimensions: '33" × 18" × 30"',
+          material: 'Organic cotton',
+          certifications: 'JPMA certified',
+        },
       },
       {
         id: 'sleep-2',
@@ -48,6 +63,12 @@ export const categories: Category[] = [
         priceRange: '$179–$249',
         affiliateUrl: 'https://www.amazon.com/dp/B09WF3CNGS?tag=buildthebaby-20',
         rating: 4.6,
+        specs: {
+          ageRange: 'Birth–~5 months (20 lbs)',
+          weight: '25 lbs',
+          material: 'Polyester mesh',
+          certifications: 'JPMA certified',
+        },
       },
       {
         id: 'sleep-3',
@@ -58,6 +79,12 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B08BMT1MB5?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Best for Safety',
+        specs: {
+          ageRange: 'Newborn–toddler',
+          weight: '8 lbs',
+          material: 'Wovenaire core, organic cotton cover',
+          certifications: 'GREENGUARD Gold',
+        },
       },
       {
         id: 'sleep-4',
@@ -67,6 +94,11 @@ export const categories: Category[] = [
         priceRange: '$34–$44',
         affiliateUrl: 'https://www.amazon.com/dp/B00HD0ELFK?tag=buildthebaby-20',
         rating: 4.6,
+        specs: {
+          weight: '1.5 lbs',
+          material: 'ABS plastic',
+          certifications: 'UL listed',
+        },
       },
       {
         id: 'sleep-5',
@@ -76,6 +108,12 @@ export const categories: Category[] = [
         priceRange: '$29–$39',
         affiliateUrl: 'https://www.amazon.com/dp/B0CLCBQQN2?tag=buildthebaby-20',
         rating: 4.5,
+        specs: {
+          ageRange: '0–3 months',
+          weight: '4 oz',
+          material: '100% cotton',
+          certifications: 'TOG 0.2 (warm), 1.0 (all-season)',
+        },
       },
     ],
   },
@@ -95,6 +133,11 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B0DTYSLFLX?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Top Rated',
+        specs: {
+          weight: '1.5 lbs',
+          material: 'BPA-free plastic',
+          certifications: 'FDA cleared, hospital-grade',
+        },
       },
       {
         id: 'feeding-2',
@@ -105,6 +148,11 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B08DLHNFXT?tag=buildthebaby-20',
         rating: 4.6,
         tag: 'Budget Pick',
+        specs: {
+          weight: '2 oz',
+          material: 'Food-grade silicone',
+          certifications: 'BPA, PVC & phthalate free',
+        },
       },
       {
         id: 'feeding-3',
@@ -114,6 +162,11 @@ export const categories: Category[] = [
         priceRange: '$22–$35',
         affiliateUrl: 'https://www.amazon.com/dp/B07MPHX1TX?tag=buildthebaby-20',
         rating: 4.6,
+        specs: {
+          ageRange: 'Newborn+',
+          material: 'Polypropylene, silicone nipple',
+          certifications: 'BPA-free',
+        },
       },
       {
         id: 'feeding-4',
@@ -123,6 +176,12 @@ export const categories: Category[] = [
         priceRange: '$40–$55',
         affiliateUrl: 'https://www.amazon.com/dp/B0DJRQRGSK?tag=buildthebaby-20',
         rating: 4.7,
+        specs: {
+          ageRange: 'Newborn–12 months',
+          weight: '1.8 lbs',
+          material: 'Cotton slipcover',
+          certifications: 'Machine washable cover',
+        },
       },
       {
         id: 'feeding-5',
@@ -170,6 +229,12 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B0FK5TRH3L?tag=buildthebaby-20',
         rating: 4.5,
         tag: "Editor's Pick",
+        specs: {
+          ageRange: 'Newborn–6 months',
+          weight: '1.2 lbs',
+          material: 'Mesh fabric, plastic frame',
+          certifications: 'BPA-free',
+        },
       },
       {
         id: 'bathing-2',
@@ -179,6 +244,12 @@ export const categories: Category[] = [
         priceRange: '$39–$49',
         affiliateUrl: 'https://www.amazon.com/dp/B0DVLQN538?tag=buildthebaby-20',
         rating: 4.6,
+        specs: {
+          ageRange: 'Newborn–toddler (up to 25 lbs)',
+          weight: '2.5 lbs',
+          material: 'Polypropylene',
+          certifications: 'BPA-free, phthalate-free',
+        },
       },
       {
         id: 'bathing-3',
@@ -188,6 +259,11 @@ export const categories: Category[] = [
         priceRange: '$9–$14',
         affiliateUrl: 'https://www.amazon.com/dp/B0764KHLGY?tag=buildthebaby-20',
         rating: 4.8,
+        specs: {
+          ageRange: 'Newborn+',
+          material: 'Natural oat extract formula',
+          certifications: 'Hypoallergenic, dermatologist tested, tear-free',
+        },
       },
       {
         id: 'bathing-4',
@@ -197,6 +273,11 @@ export const categories: Category[] = [
         priceRange: '$9–$14',
         affiliateUrl: 'https://www.amazon.com/dp/B00E972VZW?tag=buildthebaby-20',
         rating: 4.5,
+        specs: {
+          weight: '0.3 lbs',
+          material: 'ABS plastic',
+          certifications: 'ASTM safety tested',
+        },
       },
     ],
   },
@@ -216,6 +297,13 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B0D9XS9VXL?tag=buildthebaby-20',
         rating: 4.8,
         tag: 'Best Overall',
+        specs: {
+          ageRange: 'Newborn–50 lbs',
+          weight: '33 lbs',
+          foldDimensions: '35" × 25" × 20"',
+          material: 'Aluminum frame, UPF 50+ canopy',
+          certifications: 'JPMA certified',
+        },
       },
       {
         id: 'travel-2',
@@ -226,6 +314,12 @@ export const categories: Category[] = [
         affiliateUrl: 'https://www.amazon.com/dp/B0DHLQL58Y?tag=buildthebaby-20',
         rating: 4.7,
         tag: 'Safety Certified',
+        specs: {
+          ageRange: '4–35 lbs, up to 32"',
+          weight: '9.5 lbs (seat only)',
+          material: 'EPS foam, energy-absorbing shell',
+          certifications: 'FMVSS 213 certified, side-impact tested',
+        },
       },
       {
         id: 'travel-3',
@@ -235,6 +329,12 @@ export const categories: Category[] = [
         priceRange: '$160–$180',
         affiliateUrl: 'https://www.amazon.com/dp/B0CKW4B982?tag=buildthebaby-20',
         rating: 4.7,
+        specs: {
+          ageRange: '7–45 lbs',
+          weight: '1.1 lbs',
+          material: '100% cotton',
+          certifications: 'Hip-healthy certified (IHDI)',
+        },
       },
       {
         id: 'travel-4',
@@ -244,6 +344,11 @@ export const categories: Category[] = [
         priceRange: '$99–$119',
         affiliateUrl: 'https://www.amazon.com/dp/B0731TBBWF?tag=buildthebaby-20',
         rating: 4.6,
+        specs: {
+          weight: '1.9 lbs',
+          material: 'Polyester, faux leather trim',
+          certifications: 'PEVA-lined changing pad included',
+        },
       },
     ],
   },
