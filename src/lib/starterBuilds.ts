@@ -29,7 +29,7 @@ export const starterBuilds: StarterBuild[] = [
   {
     id: 'budget',
     title: 'The Budget Build',
-    tagline: 'Every practical essential — nothing you'll regret buying.',
+    tagline: "Every practical essential — nothing you'll regret buying.",
     priceRange: '$340–$470',
     accent: {
       badge: 'bg-amber-100 text-amber-700 border-amber-200',
