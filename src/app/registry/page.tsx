@@ -1,7 +1,11 @@
 'use client'
 
 import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import { useRegistry } from '@/context/RegistryContext'
+import { supabase } from '@/lib/supabase'
+
+const REGISTRY_ID_KEY = 'btb-registry-id'
 
 function extractASIN(url: string): string | null {
   const match = url.match(/\/dp\/([A-Z0-9]{10})/)
@@ -42,9 +46,83 @@ function getCategoryLabel(productId: string): string {
   return labels[prefix] ?? prefix
 }
 
+function generateId(): string {
+  return Math.random().toString(36).substring(2, 10)
+}
+
 export default function RegistryPage() {
   const { selections, removeFromRegistry, clearRegistry, totalItems, estimatedTotal } = useRegistry()
   const products = Object.values(selections)
+
+  const [shareState, setShareState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [shareError, setShareError] = useState('')
+  const [existingRegistryId, setExistingRegistryId] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem(REGISTRY_ID_KEY)
+      setExistingRegistryId(stored)
+    }
+  }, [])
+
+  async function copyShareLink(registryId: string) {
+    const url = `https://www.buildthebaby.com/registry/${registryId}`
+    try {
+      await navigator.clipboard.writeText(url)
+      setShareState('success')
+    } catch {
+      setShareState('success') // still show success even if clipboard fails
+    }
+  }
+
+  async function handleShareRegistry() {
+    if (products.length === 0) return
+    setShareState('loading')
+    setShareError('')
+
+    try {
+      const registryId = generateId()
+
+      // Insert registry row
+      const { error: registryError } = await supabase
+        .from('registries')
+        .insert({ id: registryId, name: "Baby Registry" })
+
+      if (registryError) throw registryError
+
+      // Insert all items
+      const items = products.map((product) => ({
+        registry_id: registryId,
+        product_name: product.name,
+        category_slug: product.id.replace(/-\d+$/, ''),
+        price_range: product.priceRange,
+        affiliate_url: product.affiliateUrl,
+        status: 'available',
+      }))
+
+      const { error: itemsError } = await supabase
+        .from('registry_items')
+        .insert(items)
+
+      if (itemsError) throw itemsError
+
+      // Persist registry ID to localStorage
+      localStorage.setItem(REGISTRY_ID_KEY, registryId)
+      setExistingRegistryId(registryId)
+
+      await copyShareLink(registryId)
+    } catch (err) {
+      console.error('Share registry error:', err)
+      setShareError('Something went wrong. Please try again.')
+      setShareState('error')
+    }
+  }
+
+  async function handleCopyExistingLink() {
+    if (!existingRegistryId) return
+    setShareState('loading')
+    await copyShareLink(existingRegistryId)
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -135,6 +213,34 @@ export default function RegistryPage() {
             >
               Add All to Amazon Cart →
             </a>
+
+            {/* Share Registry button */}
+            {shareState === 'success' ? (
+              <div className="block w-full text-center bg-emerald-50 border border-emerald-200 text-emerald-700 font-semibold text-base px-6 py-3.5 rounded-2xl">
+                Link copied! Share it with family &amp; friends 🎉
+              </div>
+            ) : existingRegistryId ? (
+              <button
+                onClick={handleCopyExistingLink}
+                disabled={shareState === 'loading'}
+                className="block w-full text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
+              >
+                {shareState === 'loading' ? 'Copying...' : '🔗 Copy Share Link'}
+              </button>
+            ) : (
+              <button
+                onClick={handleShareRegistry}
+                disabled={shareState === 'loading'}
+                className="block w-full text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
+              >
+                {shareState === 'loading' ? 'Saving registry...' : '🔗 Share Registry'}
+              </button>
+            )}
+
+            {shareState === 'error' && (
+              <p className="text-center text-sm text-rose-500">{shareError}</p>
+            )}
+
             <button
               onClick={clearRegistry}
               className="block w-full text-center text-sm font-medium text-stone-400 hover:text-rose-500 transition-colors py-2"
