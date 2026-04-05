@@ -1,9 +1,201 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
+
+const THEMES = {
+  pink: {
+    bg: 'linear-gradient(160deg, #fff5f7 0%, #fdf0ff 100%)',
+    envelopeBody: '#fce7f3',
+    envelopeBorder: '#f9a8d4',
+    envelopeInner: '#fbcfe8',
+    flapFill: '#f9a8d4',
+    flapLine: '#f472b6',
+    tagColor: '#d4a0b5',
+  },
+  blue: {
+    bg: 'linear-gradient(160deg, #eff6ff 0%, #f0f9ff 100%)',
+    envelopeBody: '#dbeafe',
+    envelopeBorder: '#93c5fd',
+    envelopeInner: '#bfdbfe',
+    flapFill: '#93c5fd',
+    flapLine: '#60a5fa',
+    tagColor: '#93b4d4',
+  },
+}
+
+function EnvelopeReveal({
+  registryName,
+  onDone,
+}: {
+  registryName: string
+  onDone: () => void
+}) {
+  const [phase, setPhase] = useState(0)
+  const theme = THEMES[Math.random() < 0.5 ? 'pink' : 'blue']
+  // 0 = sealed, 1 = flap opening, 2 = card rising, 3 = fading out
+
+  const skip = useCallback(() => {
+    setPhase(3)
+    setTimeout(onDone, 700)
+  }, [onDone])
+
+  useEffect(() => {
+    const t1 = setTimeout(() => setPhase(1), 700)
+    const t2 = setTimeout(() => setPhase(2), 1800)
+    const t3 = setTimeout(() => setPhase(3), 3400)
+    const t4 = setTimeout(onDone, 4100)
+    return () => [t1, t2, t3, t4].forEach(clearTimeout)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  const W = 320
+  const H = 200
+  const flapH = 116
+
+  return (
+    <div
+      onClick={skip}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: theme.bg,
+        zIndex: 50,
+        cursor: 'pointer',
+        opacity: phase === 3 ? 0 : 1,
+        transition: 'opacity 0.7s ease',
+        pointerEvents: phase === 3 ? 'none' : 'auto',
+      }}
+    >
+      <div style={{ position: 'relative', width: W, height: H + 40 }}>
+
+        {/* Envelope body */}
+        <div style={{
+          position: 'absolute',
+          top: 20,
+          left: 0,
+          width: W,
+          height: H,
+          backgroundColor: theme.envelopeBody,
+          borderRadius: 10,
+          border: `2px solid ${theme.envelopeBorder}`,
+          boxShadow: '0 8px 40px rgba(0,0,0,0.12)',
+          overflow: 'hidden',
+        }}>
+          {/* Bottom-left inner triangle */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            width: 0,
+            height: 0,
+            borderBottom: `${Math.round(H * 0.55)}px solid ${theme.envelopeInner}`,
+            borderRight: `${W / 2}px solid transparent`,
+          }} />
+          {/* Bottom-right inner triangle */}
+          <div style={{
+            position: 'absolute',
+            bottom: 0,
+            right: 0,
+            width: 0,
+            height: 0,
+            borderBottom: `${Math.round(H * 0.55)}px solid ${theme.envelopeInner}`,
+            borderLeft: `${W / 2}px solid transparent`,
+          }} />
+        </div>
+
+        {/* Letter / card */}
+        <div style={{
+          position: 'absolute',
+          left: 24,
+          right: 24,
+          top: 30,
+          height: H - 20,
+          backgroundColor: 'white',
+          borderRadius: 8,
+          border: `1px solid ${theme.envelopeInner}`,
+          boxShadow: phase >= 2 ? '0 8px 32px rgba(0,0,0,0.14)' : 'none',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 8,
+          zIndex: phase >= 1 ? 5 : 1,
+          transform: phase >= 2 ? `translateY(-${Math.round(H * 0.72)}px)` : 'translateY(0)',
+          transition: phase >= 2
+            ? 'transform 1s cubic-bezier(0.34, 1.5, 0.64, 1), box-shadow 0.4s ease'
+            : 'none',
+        }}>
+          <div style={{ fontSize: 34 }}>👶</div>
+          <p style={{
+            fontSize: 17,
+            fontWeight: 700,
+            color: '#1c1917',
+            textAlign: 'center',
+            lineHeight: 1.3,
+            padding: '0 8px',
+          }}>
+            {registryName}
+          </p>
+          <p style={{
+            fontSize: 11,
+            color: theme.tagColor,
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            fontWeight: 600,
+          }}>
+            Baby Registry
+          </p>
+        </div>
+
+        {/* Flap */}
+        <div style={{
+          position: 'absolute',
+          top: 20,
+          left: 0,
+          width: W,
+          height: flapH,
+          transformOrigin: 'center bottom',
+          transform: phase >= 1
+            ? 'perspective(600px) rotateX(-178deg)'
+            : 'perspective(600px) rotateX(0deg)',
+          transition: 'transform 1s cubic-bezier(0.4, 0, 0.2, 1)',
+          zIndex: phase >= 1 ? 2 : 6,
+        }}>
+          <svg
+            width={W}
+            height={flapH}
+            viewBox={`0 0 ${W} ${flapH}`}
+            style={{ display: 'block' }}
+          >
+            <polygon
+              points={`0,0 ${W},0 ${W / 2},${flapH}`}
+              fill={theme.flapFill}
+            />
+            <line x1="0" y1="0" x2={W / 2} y2={flapH} stroke={theme.flapLine} strokeWidth="1.5" opacity="0.4" />
+            <line x1={W} y1="0" x2={W / 2} y2={flapH} stroke={theme.flapLine} strokeWidth="1.5" opacity="0.4" />
+          </svg>
+        </div>
+      </div>
+
+      <p style={{
+        marginTop: 28,
+        fontSize: 13,
+        color: theme.tagColor,
+        opacity: phase >= 2 ? 1 : 0,
+        transition: 'opacity 0.5s ease 0.5s',
+      }}>
+        Tap anywhere to continue
+      </p>
+    </div>
+  )
+}
 
 interface RegistryItem {
   id: string
@@ -199,6 +391,7 @@ export default function SharedRegistryPage() {
   const [items, setItems] = useState<RegistryItem[]>([])
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
+  const [showEnvelope, setShowEnvelope] = useState(true)
 
   async function fetchRegistry() {
     if (!id) return
@@ -268,6 +461,13 @@ export default function SharedRegistryPage() {
   const purchasedCount = items.filter((i) => i.status === 'purchased').length
 
   return (
+    <>
+      {showEnvelope && (
+        <EnvelopeReveal
+          registryName={registry.name}
+          onDone={() => setShowEnvelope(false)}
+        />
+      )}
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Header */}
       <div className="text-center mb-10">
@@ -312,5 +512,6 @@ export default function SharedRegistryPage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }
