@@ -126,7 +126,38 @@ export default function RegistryPage() {
   async function handleCopyExistingLink() {
     if (!existingRegistryId) return
     setShareState('loading')
-    await copyShareLink(existingRegistryId)
+    setShareError('')
+
+    try {
+      // Delete old items and re-insert current ones so the link is always up to date
+      const { error: deleteError } = await supabase
+        .from('registry_items')
+        .delete()
+        .eq('registry_id', existingRegistryId)
+
+      if (deleteError) throw deleteError
+
+      const items = products.map((product) => ({
+        registry_id: existingRegistryId,
+        product_name: product.name,
+        category_slug: product.id.replace(/-\d+$/, ''),
+        price_range: product.priceRange,
+        affiliate_url: product.affiliateUrl,
+        status: 'available',
+      }))
+
+      const { error: itemsError } = await supabase
+        .from('registry_items')
+        .insert(items)
+
+      if (itemsError) throw itemsError
+
+      await copyShareLink(existingRegistryId)
+    } catch (err) {
+      console.error('Update registry error:', err)
+      setShareError('Something went wrong. Please try again.')
+      setShareState('error')
+    }
   }
 
   return (
