@@ -179,8 +179,7 @@ export default function RegistryPage() {
     try {
       const { error } = await supabase
         .from('registries')
-        .update({ name: registryName.trim(), gender: gender ?? null })
-        .eq('id', existingRegistryId)
+        .upsert({ id: existingRegistryId, name: registryName.trim(), gender: gender ?? null })
       if (error) throw error
       await handleCopyExistingLink()
     } catch (err) {
