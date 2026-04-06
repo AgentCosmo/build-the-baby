@@ -50,6 +50,41 @@ function generateId(): string {
   return Math.random().toString(36).substring(2, 10)
 }
 
+function GenderToggle({
+  value,
+  onChange,
+}: {
+  value: 'girl' | 'boy' | null
+  onChange: (v: 'girl' | 'boy') => void
+}) {
+  return (
+    <div className="flex gap-2 mb-3">
+      <button
+        type="button"
+        onClick={() => onChange('girl')}
+        className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+          value === 'girl'
+            ? 'bg-pink-100 border-pink-300 text-pink-700'
+            : 'bg-white border-stone-200 text-stone-500 hover:bg-pink-50 hover:border-pink-200'
+        }`}
+      >
+        🎀 Girl
+      </button>
+      <button
+        type="button"
+        onClick={() => onChange('boy')}
+        className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+          value === 'boy'
+            ? 'bg-blue-100 border-blue-300 text-blue-700'
+            : 'bg-white border-stone-200 text-stone-500 hover:bg-blue-50 hover:border-blue-200'
+        }`}
+      >
+        🧸 Boy
+      </button>
+    </div>
+  )
+}
+
 export default function RegistryPage() {
   const { selections, removeFromRegistry, clearRegistry, totalItems, estimatedTotal } = useRegistry()
   const products = Object.values(selections)
@@ -61,20 +96,22 @@ export default function RegistryPage() {
   const [showNameForm, setShowNameForm] = useState(false)
   const [showRenameForm, setShowRenameForm] = useState(false)
   const [registryName, setRegistryName] = useState('Our Baby Registry')
+  const [gender, setGender] = useState<'girl' | 'boy' | null>(null)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
     const stored = localStorage.getItem(REGISTRY_ID_KEY)
     setExistingRegistryId(stored)
     if (stored) {
-      // Load the saved name so the rename field is pre-filled
+      // Load the saved name + gender so forms are pre-filled
       supabase
         .from('registries')
-        .select('name')
+        .select('name, gender')
         .eq('id', stored)
         .single()
         .then(({ data }) => {
           if (data?.name) setRegistryName(data.name)
+          if (data?.gender) setGender(data.gender as 'girl' | 'boy')
         })
     }
   }, [])
@@ -102,7 +139,7 @@ export default function RegistryPage() {
       // Insert registry row
       const { error: registryError } = await supabase
         .from('registries')
-        .insert({ id: registryId, name: registryName.trim() || 'Our Baby Registry' })
+        .insert({ id: registryId, name: registryName.trim() || 'Our Baby Registry', gender: gender ?? null })
 
       if (registryError) throw registryError
 
@@ -142,7 +179,7 @@ export default function RegistryPage() {
     try {
       const { error } = await supabase
         .from('registries')
-        .update({ name: registryName.trim() })
+        .update({ name: registryName.trim(), gender: gender ?? null })
         .eq('id', existingRegistryId)
       if (error) throw error
       await handleCopyExistingLink()
@@ -313,6 +350,8 @@ export default function RegistryPage() {
                     onKeyDown={(e) => e.key === 'Enter' && handleRename()}
                     autoFocus
                   />
+                  <p className="text-stone-600 text-xs font-medium mb-2">Is it a boy or a girl?</p>
+                  <GenderToggle value={gender} onChange={setGender} />
                   <div className="flex gap-2">
                     <button
                       onClick={handleRename}
@@ -359,6 +398,8 @@ export default function RegistryPage() {
                   onKeyDown={(e) => e.key === 'Enter' && handleShareRegistry()}
                   autoFocus
                 />
+                <p className="text-stone-600 text-xs font-medium mb-2">Is it a boy or a girl?</p>
+                <GenderToggle value={gender} onChange={setGender} />
                 <div className="flex gap-2">
                   <button
                     onClick={handleShareRegistry}

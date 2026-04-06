@@ -28,13 +28,15 @@ const THEMES = {
 
 function EnvelopeReveal({
   registryName,
+  gender,
   onDone,
 }: {
   registryName: string
+  gender: 'girl' | 'boy' | null
   onDone: () => void
 }) {
   const [phase, setPhase] = useState(0)
-  const theme = THEMES[Math.random() < 0.5 ? 'pink' : 'blue']
+  const theme = THEMES[gender === 'boy' ? 'blue' : 'pink']
   // 0 = sealed, 1 = flap opening, 2 = card rising, 3 = fading out
 
   const skip = useCallback(() => {
@@ -213,6 +215,7 @@ interface RegistryItem {
 interface Registry {
   id: string
   name: string
+  gender: 'girl' | 'boy' | null
   created_at: string
 }
 
@@ -398,7 +401,7 @@ export default function SharedRegistryPage() {
 
     const { data: reg, error: regError } = await supabase
       .from('registries')
-      .select('*')
+      .select('id, name, gender, created_at')
       .eq('id', id)
       .single()
 
@@ -465,6 +468,7 @@ export default function SharedRegistryPage() {
       {showEnvelope && (
         <EnvelopeReveal
           registryName={registry.name}
+          gender={registry.gender}
           onDone={() => setShowEnvelope(false)}
         />
       )}
