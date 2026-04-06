@@ -196,6 +196,14 @@ export default function RegistryPage() {
     setShareError('')
 
     try {
+      // Always sync name + gender when copying the link
+      const { error: updateError } = await supabase
+        .from('registries')
+        .update({ name: registryName.trim() || 'Our Baby Registry', gender: gender ?? null })
+        .eq('id', existingRegistryId)
+
+      if (updateError) throw updateError
+
       // Delete old items and re-insert current ones so the link is always up to date
       const { error: deleteError } = await supabase
         .from('registry_items')
