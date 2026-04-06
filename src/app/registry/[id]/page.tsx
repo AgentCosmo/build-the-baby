@@ -24,6 +24,15 @@ const THEMES = {
     flapLine: '#60a5fa',
     tagColor: '#93b4d4',
   },
+  surprise: {
+    bg: 'linear-gradient(160deg, #fefce8 0%, #f0fdf4 100%)',
+    envelopeBody: '#fef9c3',
+    envelopeBorder: '#fde047',
+    envelopeInner: '#fef08a',
+    flapFill: '#fde047',
+    flapLine: '#facc15',
+    tagColor: '#a3a34a',
+  },
 }
 
 function EnvelopeReveal({
@@ -32,11 +41,11 @@ function EnvelopeReveal({
   onDone,
 }: {
   registryName: string
-  gender: 'girl' | 'boy' | null
+  gender: 'girl' | 'boy' | 'surprise' | null
   onDone: () => void
 }) {
   const [phase, setPhase] = useState(0)
-  const theme = THEMES[gender === 'boy' ? 'blue' : 'pink']
+  const theme = THEMES[gender === 'boy' ? 'blue' : gender === 'surprise' ? 'surprise' : 'pink']
   // 0 = sealed, 1 = flap opening, 2 = card rising, 3 = fading out
 
   const skip = useCallback(() => {
@@ -215,7 +224,7 @@ interface RegistryItem {
 interface Registry {
   id: string
   name: string
-  gender: 'girl' | 'boy' | null
+  gender: 'girl' | 'boy' | 'surprise' | null
   created_at: string
 }
 

@@ -53,34 +53,58 @@ function generateId(): string {
 function GenderToggle({
   value,
   onChange,
+  error,
 }: {
-  value: 'girl' | 'boy' | null
-  onChange: (v: 'girl' | 'boy') => void
+  value: 'girl' | 'boy' | 'surprise' | null
+  onChange: (v: 'girl' | 'boy' | 'surprise') => void
+  error?: boolean
 }) {
   return (
-    <div className="flex gap-2 mb-3">
-      <button
-        type="button"
-        onClick={() => onChange('girl')}
-        className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
-          value === 'girl'
-            ? 'bg-pink-100 border-pink-300 text-pink-700'
-            : 'bg-white border-stone-200 text-stone-500 hover:bg-pink-50 hover:border-pink-200'
-        }`}
-      >
-        🎀 Girl
-      </button>
-      <button
-        type="button"
-        onClick={() => onChange('boy')}
-        className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
-          value === 'boy'
-            ? 'bg-blue-100 border-blue-300 text-blue-700'
-            : 'bg-white border-stone-200 text-stone-500 hover:bg-blue-50 hover:border-blue-200'
-        }`}
-      >
-        🧸 Boy
-      </button>
+    <div className="mb-3">
+      <div className="flex gap-2">
+        <button
+          type="button"
+          onClick={() => onChange('girl')}
+          className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+            value === 'girl'
+              ? 'bg-pink-100 border-pink-300 text-pink-700'
+              : error
+              ? 'bg-white border-rose-300 text-stone-500 hover:bg-pink-50 hover:border-pink-200'
+              : 'bg-white border-stone-200 text-stone-500 hover:bg-pink-50 hover:border-pink-200'
+          }`}
+        >
+          🎀 Girl
+        </button>
+        <button
+          type="button"
+          onClick={() => onChange('boy')}
+          className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+            value === 'boy'
+              ? 'bg-blue-100 border-blue-300 text-blue-700'
+              : error
+              ? 'bg-white border-rose-300 text-stone-500 hover:bg-blue-50 hover:border-blue-200'
+              : 'bg-white border-stone-200 text-stone-500 hover:bg-blue-50 hover:border-blue-200'
+          }`}
+        >
+          🧸 Boy
+        </button>
+        <button
+          type="button"
+          onClick={() => onChange('surprise')}
+          className={`flex-1 py-2 rounded-xl text-sm font-semibold border transition-colors ${
+            value === 'surprise'
+              ? 'bg-yellow-100 border-yellow-300 text-yellow-700'
+              : error
+              ? 'bg-white border-rose-300 text-stone-500 hover:bg-yellow-50 hover:border-yellow-200'
+              : 'bg-white border-stone-200 text-stone-500 hover:bg-yellow-50 hover:border-yellow-200'
+          }`}
+        >
+          🎉 Surprise
+        </button>
+      </div>
+      {error && (
+        <p className="text-rose-500 text-xs mt-1.5">Please select a gender before sharing.</p>
+      )}
     </div>
   )
 }
@@ -96,7 +120,8 @@ export default function RegistryPage() {
   const [showNameForm, setShowNameForm] = useState(false)
   const [showRenameForm, setShowRenameForm] = useState(false)
   const [registryName, setRegistryName] = useState('Our Baby Registry')
-  const [gender, setGender] = useState<'girl' | 'boy' | null>(null)
+  const [gender, setGender] = useState<'girl' | 'boy' | 'surprise' | null>(null)
+  const [genderError, setGenderError] = useState(false)
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -111,7 +136,7 @@ export default function RegistryPage() {
         .single()
         .then(({ data }) => {
           if (data?.name) setRegistryName(data.name)
-          if (data?.gender) setGender(data.gender as 'girl' | 'boy')
+          if (data?.gender) setGender(data.gender as 'girl' | 'boy' | 'surprise')
         })
     }
   }, [])
@@ -129,6 +154,11 @@ export default function RegistryPage() {
 
   async function handleShareRegistry() {
     if (products.length === 0) return
+    if (!gender) {
+      setGenderError(true)
+      return
+    }
+    setGenderError(false)
     setShowNameForm(false)
     setShareState('loading')
     setShareError('')
@@ -173,6 +203,11 @@ export default function RegistryPage() {
 
   async function handleRename() {
     if (!existingRegistryId || !registryName.trim()) return
+    if (!gender) {
+      setGenderError(true)
+      return
+    }
+    setGenderError(false)
     setShowRenameForm(false)
     setShareState('loading')
     setShareError('')
@@ -350,7 +385,7 @@ export default function RegistryPage() {
                     autoFocus
                   />
                   <p className="text-stone-600 text-xs font-medium mb-2">Is it a boy or a girl?</p>
-                  <GenderToggle value={gender} onChange={setGender} />
+                  <GenderToggle value={gender} onChange={(v) => { setGender(v); setGenderError(false) }} error={genderError} />
                   <div className="flex gap-2">
                     <button
                       onClick={handleRename}
@@ -389,7 +424,7 @@ export default function RegistryPage() {
                   autoFocus
                 />
                 <p className="text-stone-600 text-xs font-medium mb-2">Is it a boy or a girl?</p>
-                <GenderToggle value={gender} onChange={setGender} />
+                <GenderToggle value={gender} onChange={(v) => { setGender(v); setGenderError(false) }} error={genderError} />
                 <div className="flex gap-2">
                   <button
                     onClick={handleShareRegistry}
