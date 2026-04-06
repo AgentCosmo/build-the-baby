@@ -59,12 +59,23 @@ export default function RegistryPage() {
   const [shareUrl, setShareUrl] = useState('')
   const [existingRegistryId, setExistingRegistryId] = useState<string | null>(null)
   const [showNameForm, setShowNameForm] = useState(false)
+  const [showRenameForm, setShowRenameForm] = useState(false)
   const [registryName, setRegistryName] = useState('Our Baby Registry')
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem(REGISTRY_ID_KEY)
-      setExistingRegistryId(stored)
+    if (typeof window === 'undefined') return
+    const stored = localStorage.getItem(REGISTRY_ID_KEY)
+    setExistingRegistryId(stored)
+    if (stored) {
+      // Load the saved name so the rename field is pre-filled
+      supabase
+        .from('registries')
+        .select('name')
+        .eq('id', stored)
+        .single()
+        .then(({ data }) => {
+          if (data?.name) setRegistryName(data.name)
+        })
     }
   }, [])
 
@@ -118,6 +129,25 @@ export default function RegistryPage() {
       await copyShareLink(registryId)
     } catch (err) {
       console.error('Share registry error:', err)
+      setShareError('Something went wrong. Please try again.')
+      setShareState('error')
+    }
+  }
+
+  async function handleRename() {
+    if (!existingRegistryId || !registryName.trim()) return
+    setShowRenameForm(false)
+    setShareState('loading')
+    setShareError('')
+    try {
+      const { error } = await supabase
+        .from('registries')
+        .update({ name: registryName.trim() })
+        .eq('id', existingRegistryId)
+      if (error) throw error
+      await handleCopyExistingLink()
+    } catch (err) {
+      console.error('Rename registry error:', err)
       setShareError('Something went wrong. Please try again.')
       setShareState('error')
     }
@@ -271,13 +301,52 @@ export default function RegistryPage() {
                 <p className="text-xs text-emerald-600 text-center mt-2">Share this link with family &amp; friends</p>
               </div>
             ) : existingRegistryId ? (
-              <button
-                onClick={handleCopyExistingLink}
-                disabled={shareState === 'loading'}
-                className="block w-full text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
-              >
-                {shareState === 'loading' ? 'Copying...' : '🔗 Copy Share Link'}
-              </button>
+              showRenameForm ? (
+                <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
+                  <p className="text-stone-700 font-semibold text-sm mb-3">Rename your registry</p>
+                  <input
+                    type="text"
+                    value={registryName}
+                    onChange={(e) => setRegistryName(e.target.value)}
+                    placeholder="e.g. Sarah & Mike's Baby Registry"
+                    className="w-full text-sm bg-white border border-amber-200 rounded-xl px-3 py-2 text-stone-700 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-300 mb-3"
+                    onKeyDown={(e) => e.key === 'Enter' && handleRename()}
+                    autoFocus
+                  />
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleRename}
+                      disabled={shareState === 'loading'}
+                      className="flex-1 bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm px-4 py-2 rounded-xl transition-colors disabled:opacity-60"
+                    >
+                      Save &amp; Copy Link
+                    </button>
+                    <button
+                      onClick={() => setShowRenameForm(false)}
+                      className="px-4 py-2 text-sm font-medium text-stone-500 hover:text-stone-700 border border-stone-200 rounded-xl bg-white hover:bg-stone-50 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="flex gap-2">
+                  <button
+                    onClick={handleCopyExistingLink}
+                    disabled={shareState === 'loading'}
+                    className="flex-1 text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
+                  >
+                    {shareState === 'loading' ? 'Updating...' : '🔗 Copy Share Link'}
+                  </button>
+                  <button
+                    onClick={() => setShowRenameForm(true)}
+                    className="bg-white border border-stone-200 text-stone-500 hover:text-stone-700 hover:bg-stone-50 text-sm font-medium px-4 py-3.5 rounded-2xl shadow-sm transition-colors"
+                    title="Rename registry"
+                  >
+                    ✏️
+                  </button>
+                </div>
+              )
             ) : showNameForm ? (
               <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
                 <p className="text-stone-700 font-semibold text-sm mb-3">What should we call your registry?</p>
