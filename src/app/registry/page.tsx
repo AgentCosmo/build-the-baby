@@ -196,14 +196,6 @@ export default function RegistryPage() {
     setShareError('')
 
     try {
-      // Always sync name + gender when copying the link
-      const { error: updateError } = await supabase
-        .from('registries')
-        .update({ name: registryName.trim() || 'Our Baby Registry', gender: gender ?? null })
-        .eq('id', existingRegistryId)
-
-      if (updateError) throw updateError
-
       // Delete old items and re-insert current ones so the link is always up to date
       const { error: deleteError } = await supabase
         .from('registry_items')
@@ -377,22 +369,13 @@ export default function RegistryPage() {
                   </div>
                 </div>
               ) : (
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleCopyExistingLink}
-                    disabled={shareState === 'loading'}
-                    className="flex-1 text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
-                  >
-                    {shareState === 'loading' ? 'Updating...' : '🔗 Copy Share Link'}
-                  </button>
-                  <button
-                    onClick={() => setShowRenameForm(true)}
-                    className="bg-white border border-stone-200 text-stone-500 hover:text-stone-700 hover:bg-stone-50 text-sm font-medium px-4 py-3.5 rounded-2xl shadow-sm transition-colors"
-                    title="Rename registry"
-                  >
-                    ✏️
-                  </button>
-                </div>
+                <button
+                  onClick={() => setShowRenameForm(true)}
+                  disabled={shareState === 'loading'}
+                  className="block w-full text-center bg-white border border-amber-300 text-amber-700 hover:bg-amber-50 font-semibold text-base px-6 py-3.5 rounded-2xl shadow-sm transition-colors disabled:opacity-60"
+                >
+                  {shareState === 'loading' ? 'Updating...' : '🔗 Share Registry'}
+                </button>
               )
             ) : showNameForm ? (
               <div className="bg-amber-50 border border-amber-200 rounded-2xl px-5 py-4">
