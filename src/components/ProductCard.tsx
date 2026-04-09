@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import { useRegistry } from '@/context/RegistryContext'
 import { useCompare } from '@/context/CompareContext'
@@ -9,6 +10,7 @@ import { Product, getAmazonImageUrl } from '@/lib/data'
 interface ProductCardProps {
   product: Product
   index: number
+  categorySlug?: string
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -40,7 +42,7 @@ function StarRating({ rating }: { rating: number }) {
   )
 }
 
-export default function ProductCard({ product, index }: ProductCardProps) {
+export default function ProductCard({ product, index, categorySlug }: ProductCardProps) {
   const { selections, addToRegistry, removeFromRegistry } = useRegistry()
   const { addToCompare, removeFromCompare, isInCompare } = useCompare()
   const isSelected = Boolean(selections[product.id])
@@ -85,7 +87,9 @@ export default function ProductCard({ product, index }: ProductCardProps) {
       {/* Content */}
       <div className="p-5 flex flex-col flex-1">
         <h3 className="font-semibold text-stone-800 text-lg leading-snug mb-2">
-          {product.name}
+          <Link href={`/product/${product.id}`} className="hover:text-amber-600 transition-colors">
+            {product.name}
+          </Link>
         </h3>
         <p className="text-stone-500 text-sm leading-relaxed flex-1 mb-4">
           {product.description}
@@ -100,6 +104,14 @@ export default function ProductCard({ product, index }: ProductCardProps) {
             href={product.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer sponsored"
+            onClick={() => {
+              ;(window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'affiliate_click', {
+                product_id: product.id,
+                product_name: product.name,
+                category: categorySlug,
+                destination: 'amazon',
+              })
+            }}
             className="bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm px-4 py-2 rounded-xl transition-colors"
           >
             View on Amazon →

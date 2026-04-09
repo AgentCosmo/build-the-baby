@@ -7,6 +7,7 @@ export interface Product {
   rating: number
   tag?: string
   asin?: string
+  whyWePicked?: string
   specs?: {
     ageRange?: string
     weight?: string
@@ -573,6 +574,20 @@ export const categories: Category[] = [
 
 export function getCategoryBySlug(slug: string): Category | undefined {
   return categories.find((c) => c.slug === slug)
+}
+
+export function getProductById(id: string): Product | undefined {
+  for (const category of categories) {
+    const product = category.products.find((p) => p.id === id)
+    if (product) return product
+  }
+  return undefined
+}
+
+export function getAllProducts(): { product: Product; category: Category }[] {
+  return categories.flatMap((category) =>
+    category.products.map((product) => ({ product, category }))
+  )
 }
 
 export const categoryNavItems = categories.map(({ slug, name, emoji }) => ({

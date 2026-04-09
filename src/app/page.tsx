@@ -174,8 +174,8 @@ export default function HomePage() {
               },
               {
                 step: '03',
-                title: 'Add to Your Registry',
-                desc: 'Click through to Amazon and add directly to your baby registry.',
+                title: 'Buy on Amazon (Same Price)',
+                desc: "Click through to Amazon. You pay the same price — we just earn a small affiliate commission that keeps this site free.",
                 emoji: '🛒',
               },
             ].map(({ step, title, desc, emoji }) => (
